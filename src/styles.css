@@ -1,9 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Titan+One&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   --yellow-EM: #f8bd00;
   --blue-EM: #25328b;
   --white: #ffff;
   --black: #000000;
+  --titan-one: 'Titan One', cursive;
 }
 
 
