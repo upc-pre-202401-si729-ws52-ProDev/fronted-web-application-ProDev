@@ -1,0 +1,22 @@
+.donation-page-container {
+  display: flex;
+  background-color: var(--yellow-EM);
+  padding: 20px;
+  height: calc(100vh - 40px); /* Ajusta la altura según el tamaño de tu header/footer */
+  box-sizing: border-box;
+}
+
+.donation-list-container {
+  flex: 1;
+  margin-right: 20px;
+  padding: 20px;
+  background-color: #E3E3E3; /* Fondo claro para la lista, modifícalo según tus preferencias */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra suave para el contenedor */
+}
+
+.donation-form-container {
+  flex: 1;
+  padding: 20px;
+  background-color: var(--yellow-EM); /* Fondo claro para el formulario, modifícalo según tus preferencias */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra suave para el contenedor */
+}

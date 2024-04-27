@@ -1,0 +1,15 @@
+<h1>Your Donations:</h1>
+<div *ngFor="let donation of donations">
+  <mat-card class="donation-card" aria-label="Card of a donation" role="contentinfo">
+    <mat-card-header>
+      <mat-card-title>{{ donation.ong }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="donation.product.urlImage" alt="Image from {{ donation.product.name }}" width="50" height="50">
+    <mat-card-content>
+      <p>Producto: {{ donation.product.name }}</p>
+      <p>Cantidad: {{ donation.product.quantity }}</p>
+      <p>Tipo: {{ donation.product.type }}</p>
+      <p>Expira: {{ donation.product.expirationDate }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
