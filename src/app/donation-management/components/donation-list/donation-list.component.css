@@ -1,0 +1,13 @@
+.donation-card {
+    margin-bottom: 0.5rem;
+    max-width: 95%;
+  background-color: var(--blue-palid);
+  font-family: var(--titan-one), cursive;
+}
+
+.donation-container {
+  height: 80vh;
+  overflow-y: auto;
+  font-family: var(--titan-one), cursive;
+
+}
