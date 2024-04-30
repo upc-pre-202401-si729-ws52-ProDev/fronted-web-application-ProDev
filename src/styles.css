@@ -1,4 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Titan+One&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --yellow-EM: #ffffff;
+  --blue-EM: #25328b;
+  --white: #ffff;
+  --black: #000000;
+  --blue-palid: #9DA3FD;
+  --titan-one: 'Titan One', cursive;
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
