@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Titan+One&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --yellow-EM: #ffffff;
+  --yellow-EM: #F8BD00;
   --blue-EM: #25328b;
   --white: #ffff;
   --black: #000000;
@@ -13,3 +13,6 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  background-color: var(--yellow-EM);
+}
