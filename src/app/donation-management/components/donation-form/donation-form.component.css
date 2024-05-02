@@ -1,0 +1,29 @@
+.donation-form-card{
+  background-color:transparent;
+}
+
+button {
+  border-radius: 50px; /* Esto hará que los botones sean redondeados */
+  padding: 10px 20px; /* Ajusta el padding según tus preferencias */
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 600px) {
+  button {
+    font-size: 12px; /* Reduce el tamaño de la fuente para pantallas pequeñas */
+  }
+}
+
+/* Media query para pantallas medianas */
+@media (min-width: 601px) and (max-width: 1024px) {
+  button {
+    font-size: 16px; /* Aumenta el tamaño de la fuente para pantallas medianas */
+  }
+}
+
+/* Media query para pantallas grandes */
+@media (min-width: 1025px) {
+  button {
+    font-size: 20px; /* Aumenta aún más el tamaño de la fuente para pantallas grandes */
+  }
+}
