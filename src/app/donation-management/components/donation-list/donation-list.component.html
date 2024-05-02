@@ -9,7 +9,9 @@
         <img mat-card-image [src]="donation.product.urlImage" alt="Image from {{ donation.product.name }}" width="50" height="50" style="margin-left: 5rem">
         <div style="margin-left: 10rem">
           <mat-card-content>
-            <p>Product: </p>
+            <span>Data: </span>
+            <br>
+            <br>
             <p>Quantity: {{ donation.product.quantity }}</p>
             <p>Type: {{ donation.product.type }}</p>
             <p>Due date: {{ donation.product.expirationDate }}</p>

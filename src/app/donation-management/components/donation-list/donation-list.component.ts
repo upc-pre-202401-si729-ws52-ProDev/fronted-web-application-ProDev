@@ -17,12 +17,15 @@ export class DonationListComponent implements OnInit{
 
   ngOnInit() {
     this.getDonations();
+
+    this.donationApiService.donationCreated$.subscribe(() => {
+      this.getDonations();
+    });
   }
 
-  getDonations() {
-    this.donationApiService.getDonations().subscribe((data: any) => {
-      this.donations = data;
-      console.log(data);
+  getDonations(): void {
+    this.donationApiService.getDonations().subscribe(donations => {
+      this.donations = donations;
     });
   }
 
