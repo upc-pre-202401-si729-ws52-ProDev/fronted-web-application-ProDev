@@ -90,6 +90,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "fronted-ecomarket:build:production",
+              "serveTarget": "fronted-ecomarket:serve:production"
+            },
+            "development": {
+              "buildTarget": "fronted-ecomarket:build:development",
+              "serveTarget": "fronted-ecomarket:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
