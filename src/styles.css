@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Titan+One&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Titan+One&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   --yellow-EM: #F8BD00;
@@ -11,7 +11,10 @@
   --titan-one: 'Titan One', cursive;
 }
 
-
+h1{
+  font-family: 'Titan One', cursive;
+  font-size: 3rem;
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 body {

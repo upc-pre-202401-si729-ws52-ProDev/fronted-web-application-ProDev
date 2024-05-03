@@ -13,4 +13,8 @@ export class ProductsApiService {
   getProducts(){
     return this.http.get<any>(this.baseURL);
   }
+
+  createProduct(product: any){
+    return this.http.post<any>(this.baseURL, product);
+  }
 }

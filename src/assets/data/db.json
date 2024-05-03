@@ -235,6 +235,17 @@
       "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
       "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
     }
+  ],
+  "companies": [
+    {
+      "id": "1",
+      "profileImage": "https://i.pinimg.com/736x/ec/7c/af/ec7cafae1224c318796d41e728eacb6d.jpg",
+      "name": "Family Supermarket",
+      "email": "famarket@gmail.com",
+      "ruc": "109809803",
+      "phone": "908080808",
+      "description": "We are a company to sell products about first necessity! we are the better"
+    }
   ]
 
 }

@@ -1,5 +1,6 @@
 <body>
   <div class="login-container">
+
     <img src="assets/logo2.png" alt="logo" width="80px">
     <h2>QUÉ BUENO VERTE DENUEVO!</h2>
     <form  (ngSubmit)="login()" #loginForm="ngForm">
@@ -15,8 +16,7 @@
       <button class="login" type="submit" [disabled]="!loginForm.form.valid" >Sign in</button>
       <button class="signin" (click)="onSignup()" >Create Account</button>
       <hr color="#000">
-      <button class="google" type="submitGoogle" >Login with Google</button>
-      <button class="facebook"  type= "submitFacebook" >Login with Facebook</button>
+
     </form>
   </div>
 </body>

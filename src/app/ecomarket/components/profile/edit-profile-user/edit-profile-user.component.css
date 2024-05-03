@@ -1,0 +1,78 @@
+body {
+  background-color: #F8BD00;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.user-details div {
+  width: 48%;
+}
+
+.user-details .left {
+  text-align: right;
+}
+
+.user-details .right {
+  text-align: left;
+}
+
+.user-details input[type="text"],
+.user-details input[type="email"],
+.user-details input[type="tel"],
+.user-details input[type="number"]{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.user-details textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #25328B;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 20px;
+  cursor: pointer;
+  position: relative;
+  top: 10px;
+}
+
+button:hover {
+  background-color: darkblue;
+}
+
+.default-image {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
