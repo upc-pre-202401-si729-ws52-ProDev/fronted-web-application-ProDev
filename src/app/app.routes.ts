@@ -5,6 +5,7 @@ import { DashboardComponent } from "./ecomarket/pages/dashboard/dashboard.compon
 import { SignupPageComponent } from "./ecomarket/pages/signup-page/signup-page.component";
 import {DonationsPageComponent} from "./donation-management/components/donations-page/donations-page.component";
 import {EditProfileComponent} from "./ecomarket/components/profile/edit-profile/edit-profile.component";
+import {ProductListComponent} from "./ecomarket/pages/product-list/product-list.component";
 
 export const routes: Routes = [
   {
@@ -33,6 +34,10 @@ export const routes: Routes = [
   {
     path:'profile/edit-profile',
     component: EditProfileComponent
+  },
+
+  {
+    path: 'product-list', component: ProductListComponent
   }
 
 ];
