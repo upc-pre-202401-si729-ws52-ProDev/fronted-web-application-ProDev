@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIcon} from "@angular/material/icon";
 import {MatButton, MatIconButton} from "@angular/material/button";
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-toolbar-content',
@@ -19,4 +19,10 @@ import {RouterLink} from "@angular/router";
 })
 export class ToolbarContentComponent {
 
+  constructor(private route: Router) {
+  }
+
+  onLogout() {
+    this.route.navigate(['/login']);
+  }
 }
