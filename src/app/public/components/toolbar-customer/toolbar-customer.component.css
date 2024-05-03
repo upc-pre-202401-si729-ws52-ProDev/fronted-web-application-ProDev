@@ -1,0 +1,32 @@
+mat-toolbar{
+  background-color: var(--blue-EM);
+  color: white;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.menu-item {
+  margin-right: 80px;
+  text-align: center;
+}
+
+.menu-item:first-child {
+  margin-left: 10%;
+}
+
+.items {
+  margin-left: 40px;
+}
+
+mat-toolbar button {
+  color: white;
+  font-family: var(--titan-one);
+}
+
+span{
+  font-family: var(--titan-one);
+  font-size: 1em;
+  margin-left: 10px;
+}

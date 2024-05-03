@@ -1,0 +1,47 @@
+<app-toolbar-customer></app-toolbar-customer>
+<body>
+<div class="container">
+  <h2>Profile Picture</h2>
+  <div class="profile-picture">
+    <img src="favicon.ico" alt="Profile image" class="default-image">
+  </div>
+
+  <h2>User Details</h2>
+  <div class="user-details">
+    <div>
+      <label>Name:</label>
+      <input type="text" [(ngModel)]="user.firstName">
+    </div>
+    <div>
+      <label>Last Name:</label>
+      <input type="text" [(ngModel)]="user.lastName">
+    </div>
+    <div>
+      <label>Email:</label>
+      <input type="email" [(ngModel)]="user.email">
+    </div>
+    <div>
+      <label>Phone:</label>
+      <input type="tel" [(ngModel)]="user.phone">
+    </div>
+    <div>
+      <label>Region:</label>
+      <input type="text" [(ngModel)]="user.region">
+    </div>
+    <div>
+      <label>Direction:</label>
+      <input type="text" [(ngModel)]="user.direction">
+    </div>
+    <div>
+      <label>Genre:</label>
+      <input type="text" [(ngModel)]="user.genre">
+    </div>
+    <div>
+      <label>PostCode:</label>
+      <input type="number" [(ngModel)]="user.postcode">
+    </div>
+  </div>
+
+  <button (click)="guardar()">Save</button>
+</div>
+</body>

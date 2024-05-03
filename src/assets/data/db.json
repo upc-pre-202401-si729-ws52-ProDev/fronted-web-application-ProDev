@@ -1,0 +1,251 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "user": "ank",
+      "email": "ank.saldarriaga@gmail.com",
+      "password": "admin"
+    },
+    {
+      "id": "642d",
+      "user": "Daniel",
+      "password": "admin",
+      "email": "daniel@gmail.com"
+    }
+  ],
+
+  "donations": [
+    {
+      "id": "1",
+      "ong": "Action Against Hunger Peru",
+      "product": {
+        "name": "White Rice",
+        "quantity": 250,
+        "type": "Food",
+        "expirationDate": "2025-01-20",
+        "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      }
+    },
+    {
+      "id": "2",
+      "ong": "Prisma NGO",
+      "product": {
+        "name": "Lentils",
+        "quantity": 200,
+        "type": "Food",
+        "expirationDate": "2024-11-15",
+        "urlImage": "https://images.unsplash.com/photo-1589927986089-35812388d1b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+      }
+    },
+    {
+      "id": "3",
+      "ong": "Save the Children Peru",
+      "product": {
+        "name": "Black Beans",
+        "quantity": 300,
+        "type": "Food",
+        "expirationDate": "2025-03-05",
+        "urlImage": "https://images.unsplash.com/photo-1574180045827-681f8a1a9622?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+      }
+    },
+    {
+      "id": "4",
+      "ong": "Care International",
+      "product": {
+        "name": "Canned Corn",
+        "quantity": 150,
+        "type": "Food",
+        "expirationDate": "2024-09-10",
+        "urlImage": "https://images.unsplash.com/photo-1604908177264-c4e75577c743?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+      }
+    },
+    {
+      "id": "5",
+      "ong": "Oxfam Peru",
+      "product": {
+        "name": "Quinoa",
+        "quantity": 175,
+        "type": "Food",
+        "expirationDate": "2025-02-28",
+        "urlImage": "https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+      }
+    },
+    {
+      "id": "6",
+      "ong": "World Vision Peru",
+      "product": {
+        "name": "Pasta",
+        "quantity": 220,
+        "type": "Food",
+        "expirationDate": "2024-12-30",
+        "urlImage": "https://images.unsplash.com/photo-1551446591-142875a901a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+      }
+    },
+    {
+      "id": "7",
+      "ong": "Plan International",
+      "product": {
+        "name": "Olive Oil",
+        "quantity": 100,
+        "type": "Food",
+        "expirationDate": "2025-04-12",
+        "urlImage": "https://images.unsplash.com/photo-1463183665146-ce2ed31df6b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+      }
+    },
+    {
+      "id": "8",
+      "ong": "Global Fund for Children",
+      "product": {
+        "name": "Peanut Butter",
+        "quantity": 190,
+        "type": "Food",
+        "expirationDate": "2024-08-23",
+        "urlImage": "https://images.unsplash.com/photo-1568051243857-3e2348fec4a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+      }
+    },
+    {
+      "id": "9",
+      "ong": "Health Bridge",
+      "product": {
+        "name": "Honey",
+        "quantity": 120,
+        "type": "Food",
+        "expirationDate": "2025-05-15",
+        "urlImage": "https://images.unsplash.com/photo-1593280449110-74aabc44f0b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+      }
+    },
+    {
+      "id": "10",
+      "ong": "Education Above All",
+      "product": {
+        "name": "Sugar",
+        "quantity": 130,
+        "type": "Food",
+        "expirationDate": "2025-06-11",
+        "urlImage": "https://images.unsplash.com/photo-1570586437269-7f101de399f0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+      }
+    }
+  ],
+  "products": [
+    {
+      "id": "001",
+      "name": "Rice White",
+      "stock": 100,
+      "price": 10,
+      "type": "food",
+      "expirationDate": "2025-12-31",
+      "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
+    },
+    {
+      "id": "002",
+      "name": "Rice Brown",
+      "stock": 100,
+      "price": 15,
+      "type": "food",
+      "expirationDate": "2025-12-31",
+      "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
+
+    },
+    {
+      "id": "003",
+      "name": "Beans",
+      "stock": 100,
+      "price": 5,
+      "type": "food",
+      "expirationDate": "2025-12-31",
+      "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
+
+    },
+    {
+      "id": "004",
+      "name": "Pasta",
+      "stock": 100,
+      "price": 3,
+      "type": "food",
+      "expirationDate": "2025-12-31",
+      "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
+
+    },
+    {
+      "id": "005",
+      "name": "Tomato Sauce",
+      "stock": 100,
+      "price": 2,
+      "type": "food",
+      "expirationDate": "2025-12-31",
+      "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
+
+    },
+    {
+      "id": "006",
+      "name": "Toilet Paper",
+      "stock": 100,
+      "price": 1,
+      "type": "cleaning",
+      "expirationDate": "2025-12-31",
+      "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
+
+    },
+    {
+      "id": "007",
+      "name": "Soap",
+      "stock": 100,
+      "price": 5,
+      "type": "cleaning",
+      "expirationDate": "2025-12-31",
+      "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
+
+    },
+    {
+      "id": "008",
+      "name": "Shampoo",
+      "stock": 100,
+      "price": 3,
+      "type": "cleaning",
+      "expirationDate": "2025-12-31",
+      "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
+
+    },
+    {
+      "id": "009",
+      "name": "Toothpaste",
+      "stock": 100,
+      "price": 2,
+      "type": "cleaning",
+      "expirationDate": "2025-12-31",
+      "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
+
+    },
+    {
+      "id": "010",
+      "name": "Milk",
+      "stock": 100,
+      "price": 2,
+      "type": "food",
+      "expirationDate": "2025-12-31",
+      "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
+    }
+  ],
+  "companies": [
+    {
+      "id": "1",
+      "profileImage": "https://i.pinimg.com/736x/ec/7c/af/ec7cafae1224c318796d41e728eacb6d.jpg",
+      "name": "Family Supermarket",
+      "email": "famarket@gmail.com",
+      "ruc": "109809803",
+      "phone": "908080808",
+      "description": "We are a company to sell products about first necessity! we are the better"
+    }
+  ]
+
+}

@@ -1,0 +1,86 @@
+.main-container{
+  display: flex;
+
+}
+
+.right-container{
+  max-width: 500px;
+
+}
+
+.example-card {
+  max-width: 400px;
+  background-color: transparent;
+  margin-left: 100px;
+  margin-top: 50px;
+  border: 0.5px solid black;
+  box-shadow: 20px 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.info {
+  width: 250px; /* Disminuir el ancho del elemento .info */
+  height: 50px;
+}
+
+
+.container {
+  display: flex;
+  width: 400px; /* Aumentar el ancho del contenedor .container */
+  margin-top: 20px;
+  margin-left: 100px;
+  justify-content: flex-end;
+
+}
+
+
+h2 {
+  color: black;
+  font-size: 17px;
+  margin-right: 80px;
+  margin-top: 5px;
+}
+
+
+.example-button-row {
+
+  display: flex;
+  width: 400px; /* Aumentar el ancho del contenedor .container */
+  margin-top: 20px;
+  margin-left: 100px;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+[role="list"] {
+
+  margin-left: 100px;
+  border: 0.5px solid black;
+  width: 100%;
+}
+
+h1 {
+  margin-left: 100px;
+  margin-top: 50px;
+}
+
+.right-container .example-card {
+  margin-left: 50px;
+  margin-top: -1px;
+}

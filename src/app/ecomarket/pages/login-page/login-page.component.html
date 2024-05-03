@@ -1,0 +1,23 @@
+<body>
+  <div class="login-container">
+
+    <img src="assets/logo2.png" alt="logo" width="80px">
+    <h2>QUÉ BUENO VERTE DENUEVO!</h2>
+    <form  (ngSubmit)="login()" #loginForm="ngForm">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" [(ngModel)]="user" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required>
+      </div>
+      <p><mat-slide-toggle color="#25328B">Remember me</mat-slide-toggle></p>
+      <button class="login" type="submit" [disabled]="!loginForm.form.valid" >Sign in</button>
+      <button class="signin" (click)="onSignup()" >Create Account</button>
+      <hr color="#000">
+
+    </form>
+  </div>
+</body>
+

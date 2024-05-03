@@ -1,0 +1,76 @@
+
+body {
+  background-color: #25328B;
+  /*display: flex;*/
+  position: relative; /* Es necesario para que el hijo se posicione correctamente */
+  padding: 20px;
+  font-family: "Titan One", sans-serif;
+
+}
+
+h2 {
+  font-family: "Titan One", sans-serif;
+  color: #25328B;
+  text-align: center ;
+  margin-top: 20px;
+  font-size: 30px;
+
+}
+
+
+.register-container {
+  display: inline-block;
+  background-color: #F8BD00;
+  width: 35%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
+}
+
+.form-group {
+  display: grid;
+  margin-bottom: 5px;
+  width: 93%;
+  padding:20px;
+}
+
+label {
+  font-size: 20px;
+  color: #25328B;
+  margin-bottom: 10px;
+  text-align: center;
+
+}
+
+input {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 22%;
+}
+
+button {
+  width: 50%;
+  padding: 10px;
+  background-color: #25328B;
+  font-size: 20px;
+  color: white;
+  border-radius: 4px;
+  border-color: black;
+  cursor: pointer;
+  margin-top: 80px;
+  transform: translate(50%, -100%);
+  font-family: "Titan One", sans-serif;
+
+}
+
+button:disabled {
+  font-family: "Titan One", sans-serif;
+  background-color: #ccc;
+  color: #25328B;
+  font-size: 20px;
+  cursor: not-allowed;
+}
