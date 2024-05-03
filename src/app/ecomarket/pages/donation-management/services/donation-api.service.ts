@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Subject, tap} from "rxjs";
+import {environment} from "../../../../../environments/environmente.development";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DonationApiService {
 
-  baseUrl = 'http://localhost:3000/donations';
+  baseUrl = environment.serverBasePath + 'donations';
 
   private donationCreatedSource = new Subject<void>();
   donationCreated$ = this.donationCreatedSource.asObservable();
