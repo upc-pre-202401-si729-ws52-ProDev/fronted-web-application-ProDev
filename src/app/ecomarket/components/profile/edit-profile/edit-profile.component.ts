@@ -7,6 +7,7 @@ import {MatButton} from "@angular/material/button";
 import {ToolbarContentComponent} from "../../../../public/components/toolbar-content/toolbar-content.component";
 import {ProfileApiService} from "../../../services/profile-services/profile-api.service";
 import {Profile} from "../../../models/profile/profile";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-edit-profile',
@@ -18,7 +19,8 @@ import {Profile} from "../../../models/profile/profile";
     MatInput,
     MatButton,
     MatLabel,
-    ToolbarContentComponent
+    ToolbarContentComponent,
+    RouterLink
   ],
   templateUrl: './edit-profile.component.html',
   styleUrl: './edit-profile.component.css'
