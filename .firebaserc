@@ -1,0 +1,23 @@
+{
+  "projects": {
+    "default": "fronted-ecomarket"
+  },
+  "targets": {
+    "fronted-ecomarket": {
+      "hosting": {
+        "fronted-ecomarket": [
+          "fronted-ecomarket"
+        ]
+      }
+    },
+    "ecomarket-fb61c": {
+      "hosting": {
+        "fronted-ecomarket": [
+          "fronted-ecomarket"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}
