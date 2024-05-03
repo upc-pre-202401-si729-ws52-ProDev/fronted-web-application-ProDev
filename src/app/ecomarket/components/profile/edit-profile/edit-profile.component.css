@@ -1,0 +1,12 @@
+mat-card {
+  background: transparent; /* Fondo semi-transparente */
+  border: 2px solid var(--blue-EM); /* Borde pronunciado con el color azul definido en tus variables CSS */
+  border-radius: 15px; /* Bordes redondeados */
+  margin: 20px; /* Margen alrededor de la tarjeta */
+  padding: 20px; /* Espacio interior alrededor del contenido de la tarjeta */
+}
+
+h1 {
+  margin-top: 20px; /* Ajusta este valor según cuánto quieras mover el título hacia abajo */
+  font-family: var(--titan-one);
+}
