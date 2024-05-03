@@ -37,7 +37,7 @@ export class LoginPageComponent {
 
   login() {
 
-    this.http.get('http://localhost:3000/users').subscribe((data: any) => {
+    this.http.get('https://my-json-server.typicode.com/upc-pre-202401-si729-ws52-ProDev/eco-market-api/users').subscribe((data: any) => {
       console.log(data);
       if (data) {
         const userExists = data.some((user: {
