@@ -14,4 +14,8 @@ export class ProfileApiService {
   getProfileCompany(){
     return this.http.get(this.baseUrl + 'companies');
   }
+
+  getProfileCustomer(){
+    return this.http.get<any>(this.baseUrl + 'users?id=642d');
+  }
 }

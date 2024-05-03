@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
 import {MatButton} from "@angular/material/button";
 import {MatToolbar} from "@angular/material/toolbar";
-import { Router } from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-toolbar-customer',
   standalone: true,
-    imports: [
-        MatButton,
-        MatToolbar
-    ],
+  imports: [
+    MatButton,
+    MatToolbar,
+    RouterLink
+  ],
   templateUrl: './toolbar-customer.component.html',
   styleUrl: './toolbar-customer.component.css'
 })

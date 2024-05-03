@@ -28,7 +28,7 @@ export class SignupPageComponent {
       email: this.email
     };
 
-    this.http.post('http://localhost:3000/users', newUser).subscribe(response => {
+    this.http.post('https://my-json-server.typicode.com/upc-pre-202401-si729-ws52-ProDev/eco-market-api/users', newUser).subscribe(response => {
       console.log(response);
       this.router.navigate(['/login']);
     }, error => {
