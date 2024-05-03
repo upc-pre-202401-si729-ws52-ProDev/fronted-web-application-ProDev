@@ -45,9 +45,7 @@ export class LoginPageComponent {
           password: string
         }) => user.user === this.user && user.password === this.password);
         if (userExists) {
-          alert('Inicio de sesión exitoso');
-          // Redirigir al usuario al dashboard o a la página principal
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/profile-customer']);
         } else {
           alert('Correo electrónico o contraseña incorrectos o no registrados');
         }
