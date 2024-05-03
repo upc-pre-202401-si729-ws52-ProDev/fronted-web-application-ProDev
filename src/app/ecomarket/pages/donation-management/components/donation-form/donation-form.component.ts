@@ -4,8 +4,8 @@ import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import { DonationApiService } from '../../services/donation-api.service';
-import {ProductsApiService} from "../../../ecomarket/services/donation-services/products-api.service";
+import { DonationApiService} from "../../services/donation-api.service";
+import {ProductsApiService} from "../../../../services/donation-services/products-api.service";
 import {MatOption, MatSelect} from "@angular/material/select";
 import {NgForOf} from "@angular/common";
 
