@@ -39,19 +39,40 @@ export class LoginPageComponent {
 
     this.http.get('http://localhost:3000/users').subscribe((data: any) => {
       console.log(data);
-      if (data) {
-        const userExists = data.some((user: {
-          user: string,
-          password: string
-        }) => user.user === this.user && user.password === this.password);
-        if (userExists) {
-          this.router.navigate(['/profile-customer']);
-        } else {
-          alert('Correo electrónico o contraseña incorrectos o no registrados');
+      data.forEach((user: any) => {
+        if(user.type === 'customer') {
+          if (data) {
+            const userExists = data.some((user: {
+              user: string,
+              password: string
+            }) => user.user === this.user && user.password === this.password);
+            if (userExists) {
+              this.router.navigate(['/profile-customer']);
+            } else {
+              alert('Correo electrónico o contraseña incorrectos o no registrados');
+            }
+          } else {
+            console.log('Data or data.users is undefined');
+          }
         }
-      } else {
-        console.log('Data or data.users is undefined');
-      }
+        else if(user.type === 'company') {
+          if (data) {
+            const userExists = data.some((user: {
+              user: string,
+              password: string
+            }) => user.user === this.user && user.password === this.password);
+            if (userExists) {
+              this.router.navigate(['/profile-customer']);
+            } else {
+              alert('Correo electrónico o contraseña incorrectos o no registrados');
+            }
+          } else {
+            console.log('Data or data.users is undefined');
+          }
+        }
+      });
+
+
     });
   }
 }
