@@ -11,7 +11,7 @@ describe('DonationsPageComponent', () => {
       imports: [DonationsPageComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(DonationsPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
