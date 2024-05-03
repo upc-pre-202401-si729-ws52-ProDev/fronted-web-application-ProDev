@@ -1,19 +1,19 @@
 <mat-toolbar >
   <span>
-    <img src="favicon.ico"> <!--TODO: Add directory images and logo market-->
+    <img src="favicon.ico" width="40" > <!--TODO: Add directory images and logo market-->
   </span>
 
   <span aria-label="Name of company">EcoMarket |</span>
 
   <div class="items">
-    <button mat-button routerLink="/products" class="menu-item" aria-label="Products">Products</button>
-    <button mat-button routerLink="/account" class="menu-item" aria-label="Account">Account</button>
+    <button mat-button routerLink="/product-list" class="menu-item" aria-label="Products">Products</button>
+    <button mat-button routerLink="/seller-profile" class="menu-item" aria-label="Account">Account</button>
     <button mat-button routerLink="/donations" class="menu-item" aria-label="Donations">Donations</button>
   </div>
 
 
   <span class="spacer"></span>
   <!-- Button to close session-->
-  <button mat-button>Log Out</button>
+  <button mat-button (click)="onLogout()">Log Out</button>
 
 </mat-toolbar>

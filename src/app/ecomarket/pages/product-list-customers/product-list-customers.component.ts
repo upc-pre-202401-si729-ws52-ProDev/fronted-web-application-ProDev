@@ -7,15 +7,16 @@ import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import {ProductsApiService} from "../../services/donation-services/products-api.service";
 import {ToolbarContentComponent} from "../../../public/components/toolbar-content/toolbar-content.component";
+import {ToolbarCustomerComponent} from "../../../public/components/toolbar-customer/toolbar-customer.component";
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, CommonModule, MatIconModule, ToolbarContentComponent],
-  templateUrl: './product-list.component.html',
-  styleUrl: './product-list.component.css'
+  imports: [MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, CommonModule, MatIconModule, ToolbarContentComponent, ToolbarCustomerComponent],
+  templateUrl: 'product-list-customers.component.html',
+  styleUrl: 'product-list-customers.component.css'
 })
-export class ProductListComponent implements OnInit {
+export class ProductListCustomersComponent implements OnInit {
   rows: any[] = [];
 
   constructor(private productsApiService: ProductsApiService) {

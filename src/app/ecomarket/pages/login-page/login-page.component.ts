@@ -36,43 +36,18 @@ export class LoginPageComponent {
   }
 
   login() {
-
     this.http.get('https://my-json-server.typicode.com/upc-pre-202401-si729-ws52-ProDev/eco-market-api/users').subscribe((data: any) => {
       console.log(data);
-      data.forEach((user: any) => {
-        if(user.type === 'customer') {
-          if (data) {
-            const userExists = data.some((user: {
-              user: string,
-              password: string
-            }) => user.user === this.user && user.password === this.password);
-            if (userExists) {
-              this.router.navigate(['/profile-customer']);
-            } else {
-              alert('Correo electrónico o contraseña incorrectos o no registrados');
-            }
-          } else {
-            console.log('Data or data.users is undefined');
-          }
+      const currentUser = data.find((user: any) => user.user === this.user && user.password === this.password);
+      if (currentUser) {
+        if (currentUser.type === 'customer') {
+          this.router.navigate(['/profile-customer']);
+        } else {
+          this.router.navigate(['/seller-profile']);
         }
-        else if(user.type === 'company') {
-          if (data) {
-            const userExists = data.some((user: {
-              user: string,
-              password: string
-            }) => user.user === this.user && user.password === this.password);
-            if (userExists) {
-              this.router.navigate(['/profile-customer']);
-            } else {
-              alert('Correo electrónico o contraseña incorrectos o no registrados');
-            }
-          } else {
-            console.log('Data or data.users is undefined');
-          }
-        }
-      });
-
-
+      } else {
+        alert('Correo electrónico o contraseña incorrectos o no registrados');
+      }
     });
   }
 }
