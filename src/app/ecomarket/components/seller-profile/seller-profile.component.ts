@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Injectable} from '@angular/core';
 import {RouterLink, RouterOutlet} from '@angular/router';
 import { FormsModule } from "@angular/forms";
 import {NgForOf, NgOptimizedImage} from "@angular/common";
@@ -23,6 +23,9 @@ import {ToolbarCustomerComponent} from "../../../public/components/toolbar-custo
   templateUrl: './seller-profile.component.html',
   styleUrl: './seller-profile.component.css'
 })
+
+
+
 export class SellerProfileComponent {
   title = 'untitled';
   products: any[] = [];
