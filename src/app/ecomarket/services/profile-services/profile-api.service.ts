@@ -18,4 +18,8 @@ export class ProfileApiService {
   getProfileCustomer(){
     return this.http.get<any>(this.baseUrl + 'users?id=642d');
   }
+  getProducts(){
+    return this.http.get<any>(this.baseUrl + 'products');
+  }
+
 }
