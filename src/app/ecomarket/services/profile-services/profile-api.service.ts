@@ -12,7 +12,7 @@ export class ProfileApiService {
   constructor(private http:HttpClient) { }
 
   getProfileCompany(){
-    return this.http.get(this.baseUrl + 'companies');
+    return this.http.get<any>(this.baseUrl + 'companies');
   }
 
   getProfileCustomer(){

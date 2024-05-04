@@ -3,22 +3,20 @@
   <div>
     <mat-card class="example-card">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        <div mat-card-avatar class="example-header-image" [ngStyle]="{'background-image': 'url(' + company?.profileImage + ')'}"></div>        <mat-card-subtitle>
+          <span>{{company.name}}</span>
+        <br>
+          <span>{{company.email}}</span>
+          <br>
+          <span>{{company.ruc}}</span>
+        </mat-card-subtitle>
       </mat-card-header>
-      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+      <img mat-card-image :src="{{company.profileImage}}" alt="Photo of a Shiba Inu">
     </mat-card>
     <div class="container">
-      <h2>Phone</h2>
-      <mat-card class="info">
-        <mat-card-content>Simple card</mat-card-content>
-      </mat-card>
-    </div>
-    <div class="container">
-      <h2>Email</h2>
-      <mat-card class="info">
-        <mat-card-content>Simple card</mat-card-content>
+      <h2>Description: </h2>
+      <mat-card class="info mat-card-content">
+        <span>{{company?.description}}</span>
       </mat-card>
     </div>
 
@@ -33,16 +31,14 @@
       <mat-card class="example-card">
         <mat-card-header>
           <mat-card-title-group>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Small</mat-card-subtitle>
-            <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+            <mat-card-title>White Rice</mat-card-title>
+            <mat-card-subtitle>Food</mat-card-subtitle>
+            <img mat-card-sm-image src="https://m.media-amazon.com/images/I/71jZbOIH7iL.jpg" >
           </mat-card-title-group>
         </mat-card-header>
         <mat-card-content>
           <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.</p>
+            The rice bag contains a lot of quality provided by this company. Buy Now!</p>
         </mat-card-content>
       </mat-card>
     </mat-list>
