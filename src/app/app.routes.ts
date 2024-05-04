@@ -20,6 +20,9 @@ export const routes: Routes = [
     path: '', redirectTo: 'login', pathMatch: 'full'
   },
   {
+    path: 'edit-profile-user', component: EditProfileComponent
+  },
+  {
     path: 'login', component: LoginPageComponent
   },
   {

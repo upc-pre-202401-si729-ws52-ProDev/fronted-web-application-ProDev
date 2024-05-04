@@ -41,8 +41,7 @@ export class EditProfileComponent implements OnInit {
 
   ngOnInit() {
     this.profileApiService.getProfileCompany().subscribe((response: any) => {
-      // Utiliza los datos de la respuesta de la API para establecer los valores del formulario
-      const profile = response[0]; // Accede al primer objeto del array
+      const profile = response[0];
       this.profileForm.setValue({
         name: profile.name,
         email: profile.email,
@@ -55,7 +54,6 @@ export class EditProfileComponent implements OnInit {
   }
 
   onSubmit() {
-    // Aquí puedes manejar la lógica de actualización del perfil
     console.log(this.profileForm.value);
   }
 }
