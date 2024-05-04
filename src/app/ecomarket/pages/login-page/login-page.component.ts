@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { Router } from "@angular/router";
@@ -15,14 +15,26 @@ import { HttpClient } from "@angular/common/http";
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.css'
 })
-export class LoginPageComponent {
+export class LoginPageComponent implements OnInit{
   user: string = '';
   password: string = '';
   loginForm: FormGroup = new FormGroup({});
 
   // @ts-ignore
+  rememberMe: false;
   constructor(private router: Router, private http: HttpClient) {
   }
+
+ngOnInit() {
+  const savedUsername = localStorage.getItem('username');
+  const savedPassword = localStorage.getItem('password');
+
+  if (savedUsername && savedPassword) {
+    this.user = savedUsername;
+    this.password = savedPassword;
+    this.login();
+  }
+}
 
   onSubmit() {
     if (this.loginForm.valid) {
@@ -49,5 +61,10 @@ export class LoginPageComponent {
         alert('Correo electrónico o contraseña incorrectos o no registrados');
       }
     });
+      if (this.rememberMe) {
+        localStorage.setItem('username', this.user);
+        localStorage.setItem('password', this.password);
+      }
+
   }
 }

@@ -12,7 +12,7 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password" [(ngModel)]="password" required>
       </div>
-      <p><mat-slide-toggle color="#25328B">Remember me</mat-slide-toggle></p>
+      <p><mat-slide-toggle color="#25328B" [(ngModel)]="rememberMe">Remember me</mat-slide-toggle></p>
       <button class="login" type="submit" [disabled]="!loginForm.form.valid" >Sign in</button>
       <button class="signin" (click)="onSignup()" >Create Account</button>
       <hr color="#000">
