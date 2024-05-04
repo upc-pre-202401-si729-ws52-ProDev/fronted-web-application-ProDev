@@ -3,8 +3,17 @@
 }
 
 button {
-  border-radius: 50px; /* Esto hará que los botones sean redondeados */
+  border-radius: 100px; /* Esto hará que los botones sean redondeados */
   padding: 10px 20px; /* Ajusta el padding según tus preferencias */
+}
+
+/* Estilos para los campos del formulario de donación */
+.donation-form-card mat-form-field input{
+  /* Aumenta el radio del borde para hacer los campos más redondeados */
+  border-radius: 15px;
+
+  /* Aumenta el margen para separar más los campos entre sí */
+  margin: 10px 0;
 }
 
 /* Media query para pantallas pequeñas */

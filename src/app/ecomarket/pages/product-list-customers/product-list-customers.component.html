@@ -1,16 +1,15 @@
 <app-toolbar-customer></app-toolbar-customer>
 <div class="product-list-header">
-  <h1>Lista de Productos</h1>
+  <h1>Products on sale</h1>
   <div class="search-container">
     <mat-form-field appearance="fill">
-      <input matInput placeholder="Buscar">
+      <input matInput placeholder="Buscar" [formControl]="searchControl">
     </mat-form-field>
   </div>
 </div>
 
 <div class="product-cards">
-  <div class="card-row" *ngFor="let row of rows">
-    <div class="card-column" *ngFor="let product of rows">
+    <div class="card-column" *ngFor="let product of filteredRows">
       <mat-card class="example-card">
         <mat-card-header>
           <mat-card-title>{{ product.name }}</mat-card-title>
@@ -23,7 +22,6 @@
         </mat-card-content>
       </mat-card>
     </div>
-  </div>
 </div>
 
 <button mat-fab color="primary" class="floating-button" aria-label="Add">

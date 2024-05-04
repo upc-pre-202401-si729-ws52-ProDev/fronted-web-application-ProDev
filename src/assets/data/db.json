@@ -4,13 +4,15 @@
       "id": "1",
       "user": "ank",
       "email": "ank.saldarriaga@gmail.com",
-      "password": "admin"
+      "password": "admin",
+      "type": "company"
     },
     {
       "id": "642d",
       "user": "Daniel",
       "password": "admin",
-      "email": "daniel@gmail.com"
+      "email": "daniel@gmail.com",
+      "type": "customer"
     }
   ],
 
