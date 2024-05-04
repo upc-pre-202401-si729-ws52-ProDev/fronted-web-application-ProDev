@@ -8,12 +8,12 @@ import { MatIconModule } from '@angular/material/icon';
 import {ProductsApiService} from "../../services/donation-services/products-api.service";
 import {ToolbarContentComponent} from "../../../public/components/toolbar-content/toolbar-content.component";
 import {ToolbarCustomerComponent} from "../../../public/components/toolbar-customer/toolbar-customer.component";
-import { FormControl } from '@angular/forms';
+import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import { startWith } from 'rxjs/operators';
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, CommonModule, MatIconModule, ToolbarContentComponent, ToolbarCustomerComponent],
+  imports: [MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, CommonModule, MatIconModule, ToolbarContentComponent, ToolbarCustomerComponent, ReactiveFormsModule],
   templateUrl: 'product-list-customers.component.html',
   styleUrl: 'product-list-customers.component.css'
 })
@@ -28,7 +28,6 @@ export class ProductListCustomersComponent implements OnInit {
   ngOnInit(): void {
     this.productsApiService.getProducts().subscribe(
       (data: any) => {
-        // Dependiendo de cómo esté estructurado tu JSON, necesitarás acceder a la propiedad adecuada
         this.rows = data;
         this.filteredRows = this.rows;
       },
@@ -36,6 +35,12 @@ export class ProductListCustomersComponent implements OnInit {
         console.log('Error obteniendo productos:', error);
       }
     );
+
+    this.searchControl.valueChanges
+      .pipe(startWith(''))
+      .subscribe(value => {
+        this.filteredRows = this.rows.filter(product => product.name.toLowerCase().includes(value.toLowerCase()));
+      });
   }
 }
 
