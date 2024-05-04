@@ -5,8 +5,8 @@ import { MatInputModule } from '@angular/material/input';
 import{MatButtonModule} from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
-import {ProductsApiService} from "../../services/donation-services/products-api.service";
 import {ToolbarContentComponent} from "../../../public/components/toolbar-content/toolbar-content.component";
+import {ProfileApiService} from "../../services/profile-services/profile-api.service";
 
 @Component({
   selector: 'app-product-list',
@@ -18,7 +18,7 @@ import {ToolbarContentComponent} from "../../../public/components/toolbar-conten
 export class ProductListComponent implements OnInit {
   rows: any[] = [];
 
-  constructor(private productsApiService: ProductsApiService) {
+  constructor(private productsApiService: ProfileApiService) {
   }
 
   ngOnInit(): void {
