@@ -8,5 +8,36 @@ mat-card {
 
 h1 {
   margin-top: 20px; /* Ajusta este valor según cuánto quieras mover el título hacia abajo */
+  margin-left: 20px;
   font-family: var(--titan-one);
+}
+
+mat-form-field {
+  margin-left: 10px;
+}
+
+.description{
+  width: 700px;
+}
+button {
+  margin-left:  20px;
+}
+
+
+@media (min-width: 992px) {
+  .description {
+    width: 700px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .description {
+    width: 500px;
+  }
+}
+
+@media (max-width: 767px) {
+  .description {
+    width: 300px;
+  }
 }
