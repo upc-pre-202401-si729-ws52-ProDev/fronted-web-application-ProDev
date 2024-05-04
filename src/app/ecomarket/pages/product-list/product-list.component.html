@@ -1,6 +1,6 @@
 <app-toolbar-content></app-toolbar-content>
 <div class="product-list-header">
-  <h1>Lista de Productos</h1>
+  <h1>Products List</h1>
   <div class="search-container">
     <mat-form-field appearance="fill">
       <input matInput placeholder="Buscar">
@@ -9,9 +9,7 @@
 </div>
 
 <div class="product-cards">
-  <div class="card-row" *ngFor="let row of rows">
-    <div class="card-column" *ngFor="let product of rows">
-      <mat-card class="example-card">
+  <mat-card class="example-card" *ngFor="let product of rows">
         <mat-card-header>
           <mat-card-title>{{ product.name }}</mat-card-title>
           <mat-card-subtitle>{{ product.type }}</mat-card-subtitle>
@@ -21,9 +19,7 @@
           <strong>{{ product.price }}</strong>
           <p>{{ product.description }}</p>
         </mat-card-content>
-      </mat-card>
-    </div>
-  </div>
+  </mat-card>
 </div>
 
 <button mat-fab color="primary" class="floating-button" aria-label="Add">
