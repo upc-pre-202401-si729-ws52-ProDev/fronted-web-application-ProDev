@@ -8,7 +8,8 @@ import { MatIconModule } from '@angular/material/icon';
 import {ProductsApiService} from "../../services/donation-services/products-api.service";
 import {ToolbarContentComponent} from "../../../public/components/toolbar-content/toolbar-content.component";
 import {ToolbarCustomerComponent} from "../../../public/components/toolbar-customer/toolbar-customer.component";
-
+import { FormControl } from '@angular/forms';
+import { startWith } from 'rxjs/operators';
 @Component({
   selector: 'app-product-list',
   standalone: true,
@@ -18,6 +19,8 @@ import {ToolbarCustomerComponent} from "../../../public/components/toolbar-custo
 })
 export class ProductListCustomersComponent implements OnInit {
   rows: any[] = [];
+  filteredRows: any[] = [];
+  searchControl = new FormControl();
 
   constructor(private productsApiService: ProductsApiService) {
   }
@@ -26,7 +29,8 @@ export class ProductListCustomersComponent implements OnInit {
     this.productsApiService.getProducts().subscribe(
       (data: any) => {
         // Dependiendo de cómo esté estructurado tu JSON, necesitarás acceder a la propiedad adecuada
-        this.rows = data; // Ajusta esto según la estructura de tu JSON
+        this.rows = data;
+        this.filteredRows = this.rows;
       },
       error => {
         console.log('Error obteniendo productos:', error);
