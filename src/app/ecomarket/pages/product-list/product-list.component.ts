@@ -13,7 +13,7 @@ import { startWith } from 'rxjs/operators';
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, CommonModule, MatIconModule, ToolbarContentComponent],
+  imports: [MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, CommonModule, MatIconModule, ToolbarContentComponent, ReactiveFormsModule],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
