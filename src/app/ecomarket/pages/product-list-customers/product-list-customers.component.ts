@@ -10,10 +10,12 @@ import {ToolbarContentComponent} from "../../../public/components/toolbar-conten
 import {ToolbarCustomerComponent} from "../../../public/components/toolbar-customer/toolbar-customer.component";
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { startWith } from 'rxjs/operators';
+import {CartService} from "../../services/shopping-cart-services/cart.service";
+import {RouterLink} from "@angular/router";
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, CommonModule, MatIconModule, ToolbarContentComponent, ToolbarCustomerComponent, ReactiveFormsModule, FormsModule],
+  imports: [MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule, CommonModule, MatIconModule, ToolbarContentComponent, ToolbarCustomerComponent, ReactiveFormsModule, FormsModule, RouterLink],
   templateUrl: 'product-list-customers.component.html',
   styleUrl: 'product-list-customers.component.css'
 })
@@ -25,7 +27,7 @@ export class ProductListCustomersComponent implements OnInit {
   productsAtCart: any[] = [];
 
 
-  constructor(private productsApiService: ProductsApiService) {
+  constructor(private productsApiService: ProductsApiService, private cartService: CartService) {
   }
 
   ngOnInit(): void {
@@ -52,8 +54,8 @@ export class ProductListCustomersComponent implements OnInit {
     // Aquí implemento la lógica para añadir al carrito
     // por ejemplo, podrías guardar los productos en un arreglo
     // y luego mostrarlos en un componente de carrito
-    this.productsAtCart.push({product, quantity});
 
+    this.cartService.addToCart(product, quantity);
     //Limpiando la variable quantity
     this.quantity = 0;
 

@@ -1,0 +1,14 @@
+<app-toolbar-customer></app-toolbar-customer>
+
+<div *ngFor="let item of cartItems">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ item.product.name }}</mat-card-title>
+      <mat-card-subtitle>Quantity: {{ item.quantity }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="item.product.urlImage" alt="Photo of {{ item.product.name }}">
+    <mat-card-content>
+      <p>{{ item.product.description }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

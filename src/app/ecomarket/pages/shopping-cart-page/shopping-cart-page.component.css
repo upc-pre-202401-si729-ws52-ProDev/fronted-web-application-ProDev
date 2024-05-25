@@ -1,0 +1,11 @@
+mat-card {
+  width: 200px; /* Ajusta el ancho de la tarjeta para hacerla más vertical */
+  border: 1px solid blue; /* Añade un borde azul a la tarjeta */
+  border-radius: 10px; /* Redondea los bordes de la tarjeta */
+  background-color: transparent; /* Establece el color de fondo a transparente */
+}
+
+mat-card img {
+  width: 100px; /* Ajusta el ancho de la imagen para hacerla más pequeña */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
