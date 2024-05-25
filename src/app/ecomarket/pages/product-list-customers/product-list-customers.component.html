@@ -13,18 +13,26 @@
       <mat-card class="example-card">
         <mat-card-header>
           <mat-card-title>{{ product.name }}</mat-card-title>
-          <mat-card-subtitle>{{ product.type }}</mat-card-subtitle>
+          <mat-card-subtitle>Type: {{ product.type }}</mat-card-subtitle>
         </mat-card-header>
         <img mat-card-image [src]="product.urlImage" alt="Photo of {{ product.name }}" style="width: 200px;">
         <mat-card-content>
-          <strong>{{ product.price }}</strong>
+          <strong> Price: {{ product.price }} soles</strong>
           <p>{{ product.description }}</p>
         </mat-card-content>
+        <mat-card-footer>
+          <p>Introduce the quantity: </p>
+          <mat-form-field>
+            <input matInput type="number" placeholder="Quantity" [(ngModel)]="quantity" required>
+          </mat-form-field>
+          <button mat-raised-button color="primary" (click)="addToCart(product,this.quantity)">Add To Card</button>
+
+        </mat-card-footer>
       </mat-card>
     </div>
 </div>
 
-<button mat-fab color="primary" class="floating-button" aria-label="Add">
-  <mat-icon>add</mat-icon>
+<button mat-fab color="primary" class="floating-button" aria-label="Add" >
+  <strong>Go to Cart</strong>
 </button>
 
