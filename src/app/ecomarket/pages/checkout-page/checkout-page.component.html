@@ -1,0 +1,13 @@
+<div class="checkout">
+  <h2>Resumen de la compra</h2>
+  <div *ngFor="let item of cartItems">
+    <p>{{ item.product.name }} - {{ item.quantity }}</p>
+  </div>
+
+  <h2>Método de pago</h2>
+  <div *ngFor="let method of paymentMethods">
+    <button (click)="selectPaymentMethod(method)">{{ method }}</button>
+  </div>
+
+  <button [disabled]="!selectedPaymentMethod" (click)="pay()">Pagar</button>
+</div>

@@ -21,4 +21,12 @@ export class CartService {
   getCartItems() {
     return this.cartItems;
   }
+
+  removeItemFromCart(item: any) {
+    const index = this.cartItems.indexOf(item);
+    if (index > -1) {
+      this.cartItems.splice(index, 1);
+      localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
+    }
+  }
 }

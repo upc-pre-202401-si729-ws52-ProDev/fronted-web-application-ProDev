@@ -1,14 +1,29 @@
 <app-toolbar-customer></app-toolbar-customer>
 
-<div *ngFor="let item of cartItems">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>{{ item.product.name }}</mat-card-title>
-      <mat-card-subtitle>Quantity: {{ item.quantity }}</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image [src]="item.product.urlImage" alt="Photo of {{ item.product.name }}">
-    <mat-card-content>
-      <p>{{ item.product.description }}</p>
-    </mat-card-content>
-  </mat-card>
+<div class="main-cart">
+  <div class="title-cart">
+    <h2>This is your cart! Go to buy and get all easily</h2>
+  </div>
+  <div *ngFor="let item of cartItems">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ item.product.name }}</mat-card-title>
+        <mat-card-subtitle>Quantity: {{ item.quantity }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="item.product.urlImage" alt="Photo of {{ item.product.name }}">
+      <mat-card-content>
+        <p>{{ item.product.description }}</p>
+        <p>Price: {{ item.product.price }} soles</p>
+        <button mat-button (click)="removeFromCart(item)">Remove</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="total-cart">
+    <h2>Total: {{ total }}</h2>
+  </div>
+
+  <div>
+    <button class="button-cart" (click)="checkout()">CheckOut</button>
+  </div>
+
 </div>

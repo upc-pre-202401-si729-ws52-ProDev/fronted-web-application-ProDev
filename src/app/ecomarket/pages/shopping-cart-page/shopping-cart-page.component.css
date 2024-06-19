@@ -1,11 +1,49 @@
 mat-card {
   width: 200px; /* Ajusta el ancho de la tarjeta para hacerla más vertical */
-  border: 1px solid blue; /* Añade un borde azul a la tarjeta */
+  border: 5px solid blue; /* Añade un borde azul a la tarjeta */
   border-radius: 10px; /* Redondea los bordes de la tarjeta */
   background-color: transparent; /* Establece el color de fondo a transparente */
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
 }
 
 mat-card img {
   width: 100px; /* Ajusta el ancho de la imagen para hacerla más pequeña */
   height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.main-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-cart, .total-cart, .button-cart {
+  text-align: center;
+}
+
+.mat-card {
+  margin-bottom: 20px;
+}
+
+.button-cart {
+  width: 200px;
+  font-size: x-large;
+  background-color: var(--blue-EM);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  padding: 15px 20px;
+  cursor: pointer;
+  position: relative;
+  top: 10px;
+  margin-left: 5px;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.button-cart:hover {
+  background-color: darkblue;
 }
