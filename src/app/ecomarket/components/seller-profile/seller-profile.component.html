@@ -4,13 +4,13 @@
     <mat-card class="example-card">
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Seller</mat-card-subtitle>
+        <mat-card-title>{{profileCompany.name}}</mat-card-title>
+        <mat-card-subtitle>{{profileCompany.email}}</mat-card-subtitle>
       </mat-card-header>
       <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
     </mat-card>
     <div class="container">
-      <h2>Phone</h2>
+      <h2>{{profileCompany.phone}}</h2>
       <mat-card class="info">
         <mat-card-content>Simple card</mat-card-content>
       </mat-card>

@@ -5,11 +5,11 @@
     <div>
       <mat-card class="example-card">
         <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
+          <div mat-card-avatar><img [src]="profileData?.img" alt="Image of profile" ></div>
           <mat-card-title>{{ profileData?.user }}</mat-card-title>
           <mat-card-subtitle>Customer Profile</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="https://image.freepik.com/vector-gratis/perfil-avatar-hombre-icono-redondo_24640-14044.jpg" alt="Photo of a Shiba Inu">
+        <img mat-card-image [src]="profileData?.img" alt="Here should be your image :D">
       </mat-card>
       <div class="container">
         <h2>Phone</h2>

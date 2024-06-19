@@ -21,9 +21,6 @@ import {ProfileApiService} from "../../services/profile-services/profile-api.ser
 
 export class ProfileCustomerComponent implements OnInit{
   profileData:any;
-  longText = `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog
-  from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
-  originally bred for hunting.`;
 
   constructor(private router: Router,private profileApiService:ProfileApiService) { }
 

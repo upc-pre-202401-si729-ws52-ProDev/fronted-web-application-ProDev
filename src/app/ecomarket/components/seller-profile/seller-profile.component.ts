@@ -1,4 +1,4 @@
-import {Component, Injectable} from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import {RouterLink, RouterOutlet} from '@angular/router';
 import { FormsModule } from "@angular/forms";
 import {NgForOf, NgOptimizedImage} from "@angular/common";
@@ -15,6 +15,7 @@ import {
 } from "@angular/material/card";
 import {MatList} from "@angular/material/list";
 import {ToolbarCustomerComponent} from "../../../public/components/toolbar-customer/toolbar-customer.component";
+import {ProfileApiService} from "../../services/profile-services/profile-api.service";
 
 @Component({
   selector: 'app-seller-profile',
@@ -26,7 +27,7 @@ import {ToolbarCustomerComponent} from "../../../public/components/toolbar-custo
 
 
 
-export class SellerProfileComponent {
+export class SellerProfileComponent implements OnInit {
   title = 'untitled';
   products: any[] = [];
   user = {
@@ -39,6 +40,18 @@ export class SellerProfileComponent {
     genre: '',
     postcode: ''
   };
+
+  profileCompany: any;
+
+  constructor(private profileApiService:ProfileApiService) {
+  }
+
+  ngOnInit() {
+    this.profileApiService.getProfileCompany().subscribe((response:any) =>
+    {
+      this.profileCompany = response[0];
+    })
+  }
 
   guardar() {
     console.log('Perfil guardado: ', this.user);
