@@ -1,13 +1,33 @@
+<app-toolbar-customer></app-toolbar-customer>
 <div class="checkout">
-  <h2>Resumen de la compra</h2>
-  <div *ngFor="let item of cartItems">
-    <p>{{ item.product.name }} - {{ item.quantity }}</p>
-  </div>
+  <h2>Welcome to checkout - One step to make your best decision</h2>
+  <mat-card class="shopping-cart">
+    <mat-card-header>
+      <mat-card-title>This is your Shopping Cart:</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngFor="let item of cartItems" class="cart-item">
+        <p>{{ item.product.name }} - Quantity:  {{ item.quantity }}  </p>
+        <p>   Price: {{ item.product.price }} soles </p>
+        <img [src]="item.product.urlImage" alt="Photo of {{ item.product.name }}" style="width: 100px;">
+      </div>
+    </mat-card-content>
+    <mat-card-footer>
+      <p>Total: {{ total }} soles</p>
+    </mat-card-footer>
+  </mat-card>
 
-  <h2>Método de pago</h2>
-  <div *ngFor="let method of paymentMethods">
-    <button (click)="selectPaymentMethod(method)">{{ method }}</button>
-  </div>
+  <mat-card class="selector-method">
+    <mat-card-header>
+      <mat-card-title>Choose your payment method</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div *ngFor="let method of paymentMethods"  class="methods">
+        <button (click)="selectPaymentMethod(method)">{{ method }}</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
 
   <button [disabled]="!selectedPaymentMethod" (click)="pay()">Pagar</button>
 </div>
