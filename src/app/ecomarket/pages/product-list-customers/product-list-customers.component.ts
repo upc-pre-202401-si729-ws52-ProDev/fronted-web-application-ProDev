@@ -28,7 +28,8 @@ export class ProductListCustomersComponent implements OnInit {
   productsAtCart: any[] = [];
 
   constructor(private productsApiService: ProductsApiService
-  ,private router: Router) {
+  ,private router: Router,
+              private cartService: CartService) {
   }
 
   ngOnInit(): void {
