@@ -19,6 +19,7 @@
         <mat-card-content>
           <strong> Price: {{ product.price }} soles</strong>
           <p>{{ product.description }}</p>
+          <button mat-button color="secundary" (click)="viewReviews(product)">View Reviews</button>
         </mat-card-content>
         <mat-card-footer>
           <p>Introduce the quantity: </p>
@@ -26,7 +27,6 @@
             <input matInput type="number" placeholder="Quantity" [(ngModel)]="quantity" required>
           </mat-form-field>
           <button mat-raised-button color="primary" (click)="addToCart(product,this.quantity)">Add To Card</button>
-
         </mat-card-footer>
       </mat-card>
     </div>

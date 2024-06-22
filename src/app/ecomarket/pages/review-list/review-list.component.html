@@ -1,0 +1,18 @@
+<app-toolbar-content></app-toolbar-content>
+
+<h1>Lista de Reseñas</h1>
+<mat-card class="review-list">
+  <mat-card-header>
+    <div class="mat-card-title">
+    <mat-card-title>Calificaciones del producto</mat-card-title>
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="review-item" *ngFor="let review of reviews">
+      <h2>Review#{{ review.id }}</h2>
+      <p>{{ review.content }}</p>
+      <p>Calificación: {{ review.qualification }}</p>
+      <p>Fecha: {{ review.date }}</p>
+    </div>
+  </mat-card-content>
+</mat-card>

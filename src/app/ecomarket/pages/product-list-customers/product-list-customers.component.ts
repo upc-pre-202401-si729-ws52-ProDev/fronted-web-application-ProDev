@@ -10,6 +10,7 @@ import {ToolbarContentComponent} from "../../../public/components/toolbar-conten
 import {ToolbarCustomerComponent} from "../../../public/components/toolbar-customer/toolbar-customer.component";
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { startWith } from 'rxjs/operators';
+import {Router} from "@angular/router";
 import {CartService} from "../../services/shopping-cart-services/cart.service";
 import {RouterLink} from "@angular/router";
 @Component({
@@ -26,8 +27,8 @@ export class ProductListCustomersComponent implements OnInit {
   quantity: number = 0;
   productsAtCart: any[] = [];
 
-
-  constructor(private productsApiService: ProductsApiService, private cartService: CartService) {
+  constructor(private productsApiService: ProductsApiService
+  ,private router: Router) {
   }
 
   ngOnInit(): void {
@@ -62,5 +63,9 @@ export class ProductListCustomersComponent implements OnInit {
   }
 
 
+
+  viewReviews(product: any) {
+    this.router.navigate(['/review-list']);
+  }
 }
 
