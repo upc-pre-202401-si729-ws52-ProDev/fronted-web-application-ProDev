@@ -10,6 +10,7 @@ import {ToolbarContentComponent} from "../../../public/components/toolbar-conten
 import {ToolbarCustomerComponent} from "../../../public/components/toolbar-customer/toolbar-customer.component";
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import { startWith } from 'rxjs/operators';
+import {Router} from "@angular/router";
 @Component({
   selector: 'app-product-list',
   standalone: true,
@@ -22,7 +23,8 @@ export class ProductListCustomersComponent implements OnInit {
   filteredRows: any[] = [];
   searchControl = new FormControl();
 
-  constructor(private productsApiService: ProductsApiService) {
+  constructor(private productsApiService: ProductsApiService
+  ,private router: Router) {
   }
 
   ngOnInit(): void {
@@ -41,6 +43,10 @@ export class ProductListCustomersComponent implements OnInit {
       .subscribe(value => {
         this.filteredRows = this.rows.filter(product => product.name.toLowerCase().includes(value.toLowerCase()));
       });
+  }
+
+  viewReviews(product: any) {
+    this.router.navigate(['/review-list']);
   }
 }
 

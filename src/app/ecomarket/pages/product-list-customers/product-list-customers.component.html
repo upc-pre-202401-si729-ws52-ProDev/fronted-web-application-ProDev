@@ -20,7 +20,11 @@
           <strong>{{ product.price }}</strong>
           <p>{{ product.description }}</p>
         </mat-card-content>
+        <mat-card-footer>
+          <button mat-button color="secundary" (click)="viewReviews(product)">View Reviews</button>
+        </mat-card-footer>
       </mat-card>
+
     </div>
 </div>
 

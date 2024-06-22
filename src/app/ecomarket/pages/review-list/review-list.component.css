@@ -5,8 +5,9 @@
   padding: 20px;
   max-width: 800px;
   margin: auto;
-  background-color: #9DA3FDFF;
-  border-radius: 15px;
+  background-color: var(--yellow-EM);
+  border-radius: 20px;
+  border: black 5px solid;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
@@ -48,7 +49,7 @@ h1 {
 
 .mat-card-title {
   color: #25328B;
-  font-size: 2em;
+  font-size: 5em;
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;

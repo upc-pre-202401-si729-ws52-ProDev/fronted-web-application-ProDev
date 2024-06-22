@@ -35,4 +35,5 @@ export class ReviewListComponent implements OnInit {
       this.reviews = reviews;
     });
   }
+
 }
