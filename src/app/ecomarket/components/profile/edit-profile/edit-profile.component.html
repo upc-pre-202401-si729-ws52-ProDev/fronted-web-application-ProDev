@@ -2,7 +2,7 @@
 <h1>Welcome to edit your profile</h1>
 <mat-card class="">
   <mat-card-header>
-    <img mat-card-avatar [src]="profileImage" alt="Profile image">
+    <img mat-card-avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdBimkVDjUtiU6Q8ahHcTHpKKtOpySheppww&s" alt="Profile image">
     <mat-card-title>{{ profileForm.get('name')?.value }}</mat-card-title>    <mat-card-subtitle>Details: </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
@@ -13,23 +13,15 @@
         <input matInput formControlName="name">
       </mat-form-field>
       <mat-form-field>
-        <mat-label>Email: </mat-label>
-        <input matInput formControlName="email">
-      </mat-form-field>
-      <mat-form-field>
         <mat-label>RUC</mat-label>
         <input matInput formControlName="ruc" >
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Phone: </mat-label>
-        <input matInput formControlName="phone">
       </mat-form-field>
       </div>
       <mat-form-field  class="description">
         <mat-label>Description:</mat-label>
         <textarea matInput formControlName="description"></textarea>
       </mat-form-field>
-      <button mat-raised-button color="primary" type="submit" routerLink="/seller-profile" >Save</button>
+      <button mat-raised-button color="primary" type="submit" routerLink="/seller-profile" (click) = onSubmit() >Save</button>
     </form>
   </mat-card-content>
 </mat-card>

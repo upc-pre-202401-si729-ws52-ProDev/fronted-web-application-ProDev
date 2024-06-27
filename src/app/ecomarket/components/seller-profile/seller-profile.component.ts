@@ -34,14 +34,11 @@ export class SellerProfileComponent implements OnInit{
   title = 'untitled';
   profileForm = new FormGroup({
     name: new FormControl(''),
-    email: new FormControl(''),
     ruc: new FormControl(''),
-    phone: new FormControl(''),
-    description: new FormControl(''),
-    userId: new FormControl('')
+    aboutdescription: new FormControl(''),
+    user: new FormControl('')
   });
 
-  profileImage!: string;
   constructor(private formBuilder: FormBuilder, private authService: AuthserviceService, private profileApiService: ProfileApiService) {
 
   }
@@ -52,17 +49,13 @@ export class SellerProfileComponent implements OnInit{
       const profile = response[0];
       this.profileForm.setValue({
         name: profile.name,
-        email: profile.email,
         ruc: profile.ruc,
-        phone: profile.phone,
-        description: profile.description,
-        userId: profile.user
+        aboutdescription: profile.description,
+        user: profile.user
       });
-      this.profileImage = profile.profileImage; // Asegúrate de que 'profileImage' es la propiedad correcta para la imagen de perfil
     });
+
+
   }
 
-  guardar() {
-    console.log('Perfil guardado: ');
-  }
 }
