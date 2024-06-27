@@ -1,7 +1,7 @@
 <mat-card class="donation-form-card">
   <mat-card-title style="text-align: center;">New Donation</mat-card-title>
-  <mat-card-content>
-    <form [formGroup]="donationForm" (ngSubmit)="onSubmit()">
+  <mat-card-content >
+    <form [formGroup]="donationForm" (ngSubmit)="onSubmit()" class="menu-item">
       <mat-form-field class="donation-form-field">
         <mat-label>ONG</mat-label>
         <input matInput formControlName="ong" placeholder="Enter ONG">
