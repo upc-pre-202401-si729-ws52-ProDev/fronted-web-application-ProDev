@@ -1,6 +1,10 @@
 <app-toolbar-content></app-toolbar-content>
 <div class="product-list-header">
-  <h1>Products List</h1>
+  <div>
+    <button mat-fab color="secundary" class="add" aria-label="Add" (click) = onAddProduct()>
+      <mat-icon >add</mat-icon>
+    </button>
+  </div>
   <div class="search-container">
     <mat-form-field appearance="fill">
       <input matInput placeholder="Buscar" [formControl]="searchControl">
@@ -22,7 +26,7 @@
   </mat-card>
 </div>
 
-<button mat-fab color="primary" class="floating-button" aria-label="Add">
-  <mat-icon>add</mat-icon>
+<button mat-fab color="primary" class="floating-button" aria-label="Add" (click) = onAddDonation()>
+  <mat-icon >add</mat-icon>
 </button>
 

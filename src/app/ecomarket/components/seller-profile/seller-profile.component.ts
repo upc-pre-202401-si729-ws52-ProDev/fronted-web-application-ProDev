@@ -15,6 +15,9 @@ import {
 } from "@angular/material/card";
 import {MatList} from "@angular/material/list";
 import {ToolbarCustomerComponent} from "../../../public/components/toolbar-customer/toolbar-customer.component";
+import {MatIcon} from "@angular/material/icon";
+import {AuthserviceService} from "../../services/authentication/authservice.service";
+import {ProfileApiService} from "../../services/profile-services/profile-api.service";
 import {ProfileApiService} from "../../services/profile-services/profile-api.service";
 
 @Component({
@@ -27,31 +30,36 @@ import {ProfileApiService} from "../../services/profile-services/profile-api.ser
 
 
 
-export class SellerProfileComponent implements OnInit {
+export class SellerProfileComponent {
   title = 'untitled';
-  products: any[] = [];
-  user = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    region: '',
-    direction: '',
-    genre: '',
-    postcode: ''
-  };
+  profileForm = new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl(''),
+    ruc: new FormControl(''),
+    phone: new FormControl(''),
+    description: new FormControl(''),
+    user: new FormControl('')
+  });
 
-  profileCompany: any;
+  profileImage!: string;
+  constructor(private formBuilder: FormBuilder, private authService: AuthserviceService, private profileApiService: ProfileApiService) {
 
-  constructor(private profileApiService:ProfileApiService) {
   }
 
   ngOnInit() {
-    this.profileApiService.getProfileCompany().subscribe((response:any) =>
-    {
-      this.profileCompany = response[0];
-    })
-  }
+    const user = this.authService.getCurrentUser();
+    this.profileApiService.getProfileCompany(user).subscribe((response: any) => {
+      const profile = response[0];
+      this.profileForm.setValue({
+        name: profile.name,
+        email: profile.email,
+        ruc: profile.ruc,
+        phone: profile.phone,
+        description: profile.description,
+        user: profile.user
+      });
+      this.profileImage = profile.profileImage; // Asegúrate de que 'profileImage' es la propiedad correcta para la imagen de perfil
+    });
 
   guardar() {
     console.log('Perfil guardado: ', this.user);

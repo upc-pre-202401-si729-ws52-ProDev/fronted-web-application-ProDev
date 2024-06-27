@@ -5,6 +5,8 @@ import { MatCardModule} from "@angular/material/card";
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
+// @ts-ignore
+import { v4 as uuidv4 } from 'uuid'; // Importa la función para generar UUID
 
 @Component({
   selector: 'app-add-product',
@@ -39,11 +41,13 @@ export class AddProductComponent implements OnInit {
 
   onSubmit(): void {
     if (this.productForm.valid) {
+      this.productForm.patchValue({ id: uuidv4() });
       this.productsApiService.createProduct(this.productForm.value).subscribe(
         response => {
           console.log(response);
           //Muestra mensaje de exito
           alert('Product added successfully!');
+
 
         },
         error => {
