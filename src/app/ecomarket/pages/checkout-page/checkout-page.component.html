@@ -3,7 +3,7 @@
   <h2>Welcome to checkout - One step to make your best decision</h2>
   <mat-card class="shopping-cart">
     <mat-card-header>
-      <mat-card-title>This is your Shopping Cart:</mat-card-title>
+      <mat-card-title class="center-content">This is your Shopping Cart:</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <div *ngFor="let item of cartItems" class="cart-item">
@@ -12,7 +12,7 @@
         <img [src]="item.product.urlImage" alt="Photo of {{ item.product.name }}" style="width: 100px;">
       </div>
     </mat-card-content>
-    <mat-card-footer>
+    <mat-card-footer class="center-content">
       <p>Total: {{ total }} soles</p>
     </mat-card-footer>
   </mat-card>
@@ -23,11 +23,11 @@
     </mat-card-header>
     <mat-card-content>
       <div *ngFor="let method of paymentMethods"  class="methods">
-        <button (click)="selectPaymentMethod(method)">{{ method }}</button>
+        <button  (click)="selectPaymentMethod(method)">{{ method }}</button>
       </div>
     </mat-card-content>
   </mat-card>
 
 
-  <button [disabled]="!selectedPaymentMethod" (click)="pay()">Pagar</button>
+  <button class="pay center-content center-button" [disabled]="!selectedPaymentMethod" (click)="pay()">Pagar</button>
 </div>

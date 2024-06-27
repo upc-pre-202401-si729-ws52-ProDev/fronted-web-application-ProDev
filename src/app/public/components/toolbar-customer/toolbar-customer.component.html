@@ -1,12 +1,12 @@
 <mat-toolbar >
   <span>
-    <img src="favicon.ico" width="40"> <!--TODO: Add directory images and logo market-->
+    <img src="favicon.ico" width="40" alt=""> <!--TODO: Add directory images and logo market-->
   </span>
 
   <span aria-label="Name of company">EcoMarket |</span>
 
   <div class="items">
-    <button mat-button routerLink="/product-list-customers" class="menu-item" aria-label="Products">Products</button>
+    <button mat-button [routerLink]="['/product-list-customers', userId]" class="menu-item" aria-label="Products">Products</button>
     <button mat-button routerLink="/profile-customer" class="menu-item" aria-label="Account">Account</button>
   </div>
 

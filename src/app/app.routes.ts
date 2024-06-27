@@ -75,7 +75,7 @@ export const routes: Routes = [
     component: SellerProfileComponent
   },
   {
-    path:'product-list-customers',
+    path:'product-list-customers/:id',
     component: ProductListCustomersComponent
   },
  {
@@ -86,7 +86,7 @@ export const routes: Routes = [
     path:'review-list', component: ReviewListComponent
   },
   {
-    path:'shopping-cart',
+    path:'shopping-cart/:id',
     component: ShoppingCartPageComponent
   },
   {

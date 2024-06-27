@@ -6,11 +6,44 @@
   box-sizing: border-box;
 }
 
+.center-content {
+  display: flex;
+  justify-content: center;
+}
 button {
   margin-top: 10px;
   padding: 10px 20px;
   font-size: 16px;
+  background-color: white;
+  border-radius: 5px;
+  border: blue 5px solid;
 }
+
+button:hover{
+  background-color: #6f6fdc;
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
+}
+
+.pay{
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #b51e1e;
+  border-radius: 5px;
+  border: blue 5px solid;
+}
+
+.pay:hover{
+  background-color: blue;
+  text-decoration-color: black;
+  color: black; /* Cambia el color del texto a negro */
+  font-size: 20px; /* Aumenta el tamaño del texto */
+}
+
 
 .cart-item {
   display: flex;

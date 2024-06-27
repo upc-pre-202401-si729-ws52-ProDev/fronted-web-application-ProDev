@@ -13,6 +13,8 @@ import { startWith } from 'rxjs/operators';
 import {Router} from "@angular/router";
 import {CartService} from "../../services/shopping-cart-services/cart.service";
 import {RouterLink} from "@angular/router";
+import {AuthserviceService} from "../../services/authentication/authservice.service";
+import {CustomerApiService} from "../../services/customer-services/customer-api.service";
 @Component({
   selector: 'app-product-list',
   standalone: true,
@@ -28,10 +30,7 @@ export class ProductListCustomersComponent implements OnInit {
   searchControl = new FormControl();
   quantity: number = 0;
   productsAtCart: any[] = [];
-  mockUser = {
-    id: '1',
-    name: 'Test User'
-  };
+  userId = this.authService.getCurrentUser();
   private cartId: any;
 
 
@@ -40,10 +39,13 @@ export class ProductListCustomersComponent implements OnInit {
 
   constructor(private productsApiService: ProductsApiService
   ,private router: Router,
-              private cartService: CartService) {
+              private cartService: CartService,
+              private authService:AuthserviceService,
+              private customerApi:CustomerApiService){
   }
 
   ngOnInit(): void {
+
     this.productsApiService.getProducts().subscribe(
       (data: any) => {
         this.rows = data;
@@ -84,10 +86,14 @@ export class ProductListCustomersComponent implements OnInit {
   }
 
   goToShoppingCart() {
-    this.cartService.createCart(this.mockUser.id).subscribe((response: CartResponse) => {
-      this.cartId = response.cartId;
-      // Navega al carrito de compras
-      this.router.navigate(['/shopping-cart']);
+    // Obtén el UserId
+    this.customerApi.getUserById(this.userId).subscribe((userResponse: any) => {
+      this.cartService.createCart(userResponse.customerId).subscribe((cartResponse: CartResponse) => {
+       console.log('Carrito creado:', cartResponse);
+        this.cartId = cartResponse.cartId;
+        // Navega al carrito de compras
+        this.router.navigate(['/shopping-cart', userResponse.customerId]);
+      });
     });
   }
 }

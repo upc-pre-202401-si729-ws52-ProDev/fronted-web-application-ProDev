@@ -12,7 +12,7 @@ export class CustomerApiService {
   constructor(private http:HttpClient) { }
 
   updateCustomer(id: any, customerData: any) {
-    return this.http.put<any>(this.baseUrl + 'customers/', id, customerData);
+    return this.http.put<any>(`${this.baseUrl}customers/${id}`, customerData);
   }
 
   getCustomer(id: any) {
