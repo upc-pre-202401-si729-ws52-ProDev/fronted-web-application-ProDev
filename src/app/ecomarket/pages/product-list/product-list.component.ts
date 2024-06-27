@@ -9,6 +9,9 @@ import {ToolbarContentComponent} from "../../../public/components/toolbar-conten
 import {ProfileApiService} from "../../services/profile-services/profile-api.service";
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import { startWith } from 'rxjs/operators';
+import {Router} from "@angular/router";
+import {AuthserviceService} from "../../services/authentication/authservice.service";
+
 
 @Component({
   selector: 'app-product-list',
@@ -21,15 +24,15 @@ export class ProductListComponent implements OnInit {
   rows: any[] = [];
   filteredRows: any[] = [];
   searchControl = new FormControl();
-
-  constructor(private productsApiService: ProfileApiService) {
+  constructor(private productsApiService: ProfileApiService, private router: Router, private authService: AuthserviceService) {
   }
 
   ngOnInit(): void {
-    this.productsApiService.getProducts().subscribe(
+    const user = this.authService.getCurrentUser();
+
+    this.productsApiService.getProducts(user).subscribe(
       (data: any) => {
-        // Dependiendo de cómo esté estructurado tu JSON, necesitarás acceder a la propiedad adecuada
-        this.rows = data; // Ajusta esto según la estructura de tu JSON
+        this.rows = data;
         this.filteredRows = this.rows;
 
       },
@@ -44,5 +47,14 @@ export class ProductListComponent implements OnInit {
         this.filteredRows = this.rows.filter(product => product.name.toLowerCase().includes(value.toLowerCase()));
       });
   }
+
+    onAddDonation() {
+    this.router.navigate(['/add-product']);  }
+
+    onAddProduct() {
+    this.router.navigate(['/product-add']);
+    }
+
+
 }
 

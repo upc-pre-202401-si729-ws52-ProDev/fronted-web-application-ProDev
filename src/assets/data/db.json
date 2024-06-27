@@ -8,6 +8,13 @@
       "type": "company"
     },
     {
+      "id": "2",
+      "user": "nicolas",
+      "password": "admin",
+      "email": "nicolas@gmail.com",
+      "type": "company"
+    },
+    {
       "id": "642d",
       "user": "Daniel",
       "password": "admin",
@@ -15,7 +22,6 @@
       "type": "customer"
     }
   ],
-
   "donations": [
     {
       "id": "1",
@@ -137,7 +143,8 @@
       "type": "food",
       "expirationDate": "2025-12-31",
       "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
+      "description": "descripcion.",
+      "user": "ank"
     },
     {
       "id": "002",
@@ -147,107 +154,53 @@
       "type": "food",
       "expirationDate": "2025-12-31",
       "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
-
+      "description": "descripcion.",
+      "user": "ank"
     },
     {
       "id": "003",
-      "name": "Beans",
-      "stock": 100,
-      "price": 5,
-      "type": "food",
-      "expirationDate": "2025-12-31",
-      "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
-
-    },
-    {
-      "id": "004",
-      "name": "Pasta",
-      "stock": 100,
-      "price": 3,
-      "type": "food",
-      "expirationDate": "2025-12-31",
-      "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
-
-    },
-    {
-      "id": "005",
-      "name": "Tomato Sauce",
-      "stock": 100,
+      "name": "Baguette",
+      "stock": 80,
       "price": 2,
       "type": "food",
-      "expirationDate": "2025-12-31",
-      "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
-
+      "expirationDate": "2025-02-21",
+      "urlImage": "http://www.supercook.me/image/141632/",
+      "description": "Pan artesanal.",
+      "user": "nicolas"
     },
     {
-      "id": "006",
-      "name": "Toilet Paper",
-      "stock": 100,
-      "price": 1,
-      "type": "cleaning",
-      "expirationDate": "2025-12-31",
-      "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
-
+      "id": "361b",
+      "name": "Sal Marina",
+      "stock": "80",
+      "price": "4",
+      "type": "Seasoning",
+      "expirationDate": "2024-09-24",
+      "urlImage": "https://refisal.com.co/sites/default/files/2024-02/Sal-Marina-Cristales-Doypack-500.png",
+      "description": "Sal marina de calidad",
+      "user": "ank"
     },
     {
-      "id": "007",
-      "name": "Soap",
-      "stock": 100,
-      "price": 5,
-      "type": "cleaning",
-      "expirationDate": "2025-12-31",
-      "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
-
-    },
-    {
-      "id": "008",
-      "name": "Shampoo",
-      "stock": 100,
-      "price": 3,
-      "type": "cleaning",
-      "expirationDate": "2025-12-31",
-      "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
-
-    },
-    {
-      "id": "009",
-      "name": "Toothpaste",
-      "stock": 100,
-      "price": 2,
-      "type": "cleaning",
-      "expirationDate": "2025-12-31",
-      "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
-
-    },
-    {
-      "id": "010",
-      "name": "Milk",
-      "stock": 100,
-      "price": 2,
-      "type": "food",
-      "expirationDate": "2025-12-31",
-      "urlImage": "https://images.unsplash.com/photo-1562967916-eb82221dfb92?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-      "description": "The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting."
+      "id": "5c80",
+      "name": "Azucar",
+      "stock": "200",
+      "price": "5",
+      "type": "Food",
+      "expirationDate": "2024-08-24",
+      "urlImage": "https://mundoabarrotes.com/wp-content/uploads/2020/11/Azucar-Rubia-Pomalca-50-kilos.webp",
+      "description": "Azucar rubia para endulzar la vida",
+      "user": "ank"
     }
   ],
   "companies": [
     {
       "id": "1",
       "profileImage": "https://i.pinimg.com/736x/ec/7c/af/ec7cafae1224c318796d41e728eacb6d.jpg",
-      "name": "Family Supermarket",
+      "name": "Supermarket",
       "email": "famarket@gmail.com",
       "ruc": "109809803",
       "phone": "908080808",
-      "description": "We are a company to sell products about first necessity! we are the better"
+      "description": "We are a company to sell products about first necessity! we are the better",
+      "user": "ank"
     }
   ]
-
 }

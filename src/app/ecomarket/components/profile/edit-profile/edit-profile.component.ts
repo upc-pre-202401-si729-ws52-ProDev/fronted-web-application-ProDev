@@ -8,6 +8,7 @@ import {ToolbarContentComponent} from "../../../../public/components/toolbar-con
 import {ProfileApiService} from "../../../services/profile-services/profile-api.service";
 import {Profile} from "../../../models/profile/profile";
 import {RouterLink} from "@angular/router";
+import {AuthserviceService} from "../../../services/authentication/authservice.service";
 
 @Component({
   selector: 'app-edit-profile',
@@ -36,11 +37,12 @@ export class EditProfileComponent implements OnInit {
   });
 
   profileImage!: string;
-  constructor(private profileApiService:ProfileApiService) {
+  constructor(private profileApiService:ProfileApiService, private authService: AuthserviceService) {
   }
 
   ngOnInit() {
-    this.profileApiService.getProfileCompany().subscribe((response: any) => {
+    const user = this.authService.getCurrentUser();
+    this.profileApiService.getProfileCompany(user).subscribe((response: any) => {
       const profile = response[0];
       this.profileForm.setValue({
         name: profile.name,

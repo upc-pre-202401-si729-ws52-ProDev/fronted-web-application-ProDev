@@ -1,15 +1,10 @@
-<h1>Add a new product: </h1>
+<h1>Add a new donation </h1>
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Add Product</mat-card-title>
     <mat-card-subtitle>Enter product details: </mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
-      <mat-form-field>
-        <mat-label>Product ID:</mat-label>
-        <input matInput formControlName="id">
-      </mat-form-field>
       <mat-form-field>
         <mat-label>Name:</mat-label>
         <input matInput formControlName="name">
@@ -34,7 +29,7 @@
         <mat-label>Image URL:</mat-label>
         <input matInput formControlName="urlImage">
       </mat-form-field>
-      <button mat-raised-button color="primary" type="submit">Add Product</button>
+      <button mat-raised-button color="primary" type="submit" (click)=onSubmit()>Add Product</button>
     </form>
   </mat-card-content>
 </mat-card>

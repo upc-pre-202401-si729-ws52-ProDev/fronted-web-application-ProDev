@@ -1,74 +1,77 @@
-.example-card {
-  max-width: 400px;
-  background-color: transparent;
-  margin-left: 100px;
-  margin-top: 50px;
-  border: 0.5px solid black;
-  box-shadow: 20px 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-}
-
-.info {
-  width: 250px;
-  height: 50px;
-  background-color: transparent; /* Establece el color de fondo a transparente */
-}
-
-.mat-card-content {
-  border: none; /* Elimina los bordes */
-}
-
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
-}
-
-.info {
-  width: 250px; /* Disminuir el ancho del elemento .info */
-  height: 50px;
-}
-
-
-.container {
-  display: flex;
-  width: 400px; /* Aumentar el ancho del contenedor .container */
-  margin-top: 20px;
-  margin-left: 100px;
-  justify-content: flex-end;
-
-}
-
-
-h2 {
-  color: black;
-  font-size: 17px;
-  margin-right: 80px;
-  margin-top: 5px;
-}
-
-
-.example-button-row {
-
-  display: flex;
-  width: 400px; /* Aumentar el ancho del contenedor .container */
-  margin-top: 20px;
-  margin-left: 100px;
-  justify-content: center;
-}
-
 .content {
   display: flex;
 
 }
 
-[role="list"] {
-
-  margin-left: 150px;
+.example-card {
+  max-width: 400px;
+  background-color: transparent;
+  margin-top: 80px;
   border: 0.5px solid black;
-  width: 100%;
+  box-shadow: 20px 10px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-h1 {
-  margin-left: 150px;
-  margin-top: 50px;
+.container2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+
+}
+
+
+.container, .example-button-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+mat-icon {
+  margin-top: 10px;
+}
+@media (max-width: 600px) {
+  .container, .example-button-row {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .info, .example-card, [role="list"] {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .container, .example-button-row {
+    width: 80%;
+    margin-left: 10%;
+
+  }
+
+  .info, .example-card, [role="list"] {
+    width: 80%;
+    margin-left: 10%;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 901px) {
+  .container, .example-button-row {
+    width: 60%;
+    margin-left: 20%;
+  }
+
+  .info, .example-card, [role="list"] {
+    width: 60%;
+    margin-left: 20%;
+  }
+  .content {
+    display: flex;
+
+  }
 }

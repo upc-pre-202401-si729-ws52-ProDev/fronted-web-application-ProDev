@@ -1,5 +1,16 @@
+
+:host {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 130vh;
+}
+
 h1 {
-  margin-bottom: 20px;
+  align-self: center;
+  margin-top: 40px;
+  text-align: center;
   font-family: 'Titan One', cursive;
 }
 
@@ -9,10 +20,16 @@ mat-card {
   border-radius: 15px;
   margin: 20px;
   padding: 20px;
+  width: 50%;
+
 }
 
 mat-form-field {
   width: 100%;
+  margin-bottom: 20px;
+}
+
+mat-card-subtitle {
   margin-bottom: 20px;
 }
 

@@ -13,6 +13,7 @@ import {EditProfileUserComponent} from "./ecomarket/components/profile/edit-prof
 import {PurchaseConfirmationComponent} from "./ecomarket/pages/purchase-confirmation/purchase-confirmation.component";
 import {SellerProfileComponent} from "./ecomarket/components/seller-profile/seller-profile.component";
 import {ProductListCustomersComponent} from "./ecomarket/pages/product-list-customers/product-list-customers.component";
+import {ProductAddComponent} from "./ecomarket/pages/product-add/product-add.component";
 
 export const routes: Routes = [
   {
@@ -55,7 +56,7 @@ export const routes: Routes = [
     component: EditProfileUserComponent
   },
   {
-    path:'products/add-product',
+    path:'add-product',
     component: AddProductComponent
   },
   {
@@ -73,5 +74,9 @@ export const routes: Routes = [
   {
     path:'product-list-customers',
     component: ProductListCustomersComponent
+  },
+  {
+    path: 'product-add',
+    component: ProductAddComponent
   }
 ];
