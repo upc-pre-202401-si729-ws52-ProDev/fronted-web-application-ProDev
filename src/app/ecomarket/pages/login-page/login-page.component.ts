@@ -53,6 +53,7 @@ ngOnInit() {
       const currentUser = data.find((user: any) => user.user === this.user && user.password === this.password);
       if (currentUser) {
         localStorage.setItem('user', currentUser.user);
+        localStorage.setItem('companyid', currentUser.companyid);
         if (currentUser.type === 'customer') {
           this.router.navigate(['/profile-customer']);
         } else {

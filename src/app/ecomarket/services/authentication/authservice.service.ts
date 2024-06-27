@@ -10,4 +10,8 @@ export class AuthserviceService {
   getCurrentUser(): string | null{
     return localStorage.getItem('user');
   }
+
+  getCurrentCompanyId(): string | null {
+    return localStorage.getItem('companyId');
+  }
 }

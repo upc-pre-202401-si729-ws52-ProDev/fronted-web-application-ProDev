@@ -30,9 +30,7 @@ import {AuthserviceService} from "../../../services/authentication/authservice.s
 export class EditProfileComponent implements OnInit {
   profileForm = new FormGroup({
     name: new FormControl(''),
-    email: new FormControl(''),
     ruc: new FormControl(''),
-    phone: new FormControl(''),
     description: new FormControl(''),
   });
 
@@ -41,21 +39,31 @@ export class EditProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    const user = this.authService.getCurrentUser();
+    const user = this.authService.getCurrentCompanyId();
     this.profileApiService.getProfileCompany(user).subscribe((response: any) => {
       const profile = response[0];
       this.profileForm.setValue({
         name: profile.name,
-        email: profile.email,
         ruc: profile.ruc,
-        phone: profile.phone,
         description: profile.description,
       });
       this.profileImage = profile.profileImage; // Asegúrate de que 'profileImage' es la propiedad correcta para la imagen de perfil
     });
   }
 
+
   onSubmit() {
-    console.log(this.profileForm.value);
+    const companyId = this.authService.getCurrentCompanyId();
+    this.profileApiService.updateCompanyProfile(companyId, this.profileForm.value).subscribe({
+      next: (response) => {
+        console.log('Datos actualizados con éxito', response);
+        // Aquí puedes redirigir al usuario o mostrar un mensaje de éxito
+      },
+      error: (error) => {
+        console.error('Error al actualizar los datos', error);
+        // Manejar el error, por ejemplo, mostrando un mensaje al usuario
+      }
+    });
   }
+
 }

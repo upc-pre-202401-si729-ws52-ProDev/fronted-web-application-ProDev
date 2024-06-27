@@ -1,27 +1,27 @@
 import {ApplicationConfig, importProvidersFrom} from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
-import { getAuth, provideAuth } from '@angular/fire/auth';
+// Importaciones de servicios mock si están disponibles
+// import { AuthServiceMock } from './path/to/auth.service.mock';
 import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {provideHttpClient} from "@angular/common/http";
 import {provideClientHydration} from "@angular/platform-browser";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBFxMoFIjXjIdy_YpsfSyZZtosURgR5r_A",
-  authDomain: "ecomarket-ws52-8f77c.firebaseapp.com",
-  projectId: "ecomarket-ws52-8f77c",
-  storageBucket: "ecomarket-ws52-8f77c.appspot.com",
-  messagingSenderId: "65886648049",
-  appId: "1:65886648049:web:1ef3bf2d51f8d656e51b50",
-  measurementId: "G-M72CVP0NNE"
-
-
-};
+// const firebaseConfig = { ... }; // Configuración de Firebase comentada
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideAnimationsAsync(),provideHttpClient(),provideClientHydration(),importProvidersFrom([
-    provideFirebaseApp(() => initializeApp(firebaseConfig)),
-    provideAuth(()=> getAuth()),
-  ]),]
+  providers: [
+    provideRouter(routes),
+    provideAnimationsAsync(),
+    provideHttpClient(),
+    provideClientHydration(),
+    importProvidersFrom([
+      // Configuraciones de Firebase comentadas
+      // provideFirebaseApp(() => initializeApp(firebaseConfig)),
+      // provideAuth(()=> getAuth()),
+
+      // Añadir aquí la inyección de servicios mock o locales si es necesario
+    ]),
+    provideAnimationsAsync(),
+  ]
 };
