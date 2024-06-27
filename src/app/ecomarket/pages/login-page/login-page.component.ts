@@ -53,6 +53,8 @@ ngOnInit() {
       if (data) {
         // Guarda el token en el almacenamiento local
         localStorage.setItem('authToken', data.token);
+        localStorage.setItem('user', data.id);
+
         console.log(data);
 
         // Obtiene el rol del usuario

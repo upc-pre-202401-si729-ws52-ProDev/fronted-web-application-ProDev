@@ -26,7 +26,7 @@ export class ProfileApiService {
   }
 
   getProducts(user: string | null){
-    return this.http.get<any>(`${this.baseUrl + 'products'}?user=${user}`);
+    return this.http.get<any>(`${this.baseUrl + 'products/user/'}${user}`);
   }
 
   addProduct(product: Product) {

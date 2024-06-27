@@ -1,6 +1,6 @@
 import {Component, Injectable, OnInit} from '@angular/core';
 import {RouterLink, RouterOutlet} from '@angular/router';
-import { FormsModule } from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NgForOf, NgOptimizedImage} from "@angular/common";
 import {MatLabel} from "@angular/material/form-field";
 import {ToolbarContentComponent} from "../../../public/components/toolbar-content/toolbar-content.component";
@@ -16,21 +16,21 @@ import {
 import {MatList} from "@angular/material/list";
 import {ToolbarCustomerComponent} from "../../../public/components/toolbar-customer/toolbar-customer.component";
 import {MatIcon} from "@angular/material/icon";
+import {ProfileApiService} from "../../services/profile-services/profile-api.service";
 import {AuthserviceService} from "../../services/authentication/authservice.service";
-import {ProfileApiService} from "../../services/profile-services/profile-api.service";
-import {ProfileApiService} from "../../services/profile-services/profile-api.service";
+
 
 @Component({
   selector: 'app-seller-profile',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, NgOptimizedImage, MatLabel, NgForOf, ToolbarContentComponent, MatButton, MatCard, MatCardAvatar, MatCardContent, MatCardHeader, MatCardImage, MatCardSmImage, MatCardSubtitle, MatCardTitle, MatCardTitleGroup, MatList, ToolbarCustomerComponent, RouterLink],
+  imports: [RouterOutlet, FormsModule, NgOptimizedImage, MatLabel, NgForOf, ToolbarContentComponent, MatButton, MatCard, MatCardAvatar, MatCardContent, MatCardHeader, MatCardImage, MatCardSmImage, MatCardSubtitle, MatCardTitle, MatCardTitleGroup, MatList, ToolbarCustomerComponent, RouterLink, MatIcon, ReactiveFormsModule],
   templateUrl: './seller-profile.component.html',
   styleUrl: './seller-profile.component.css'
 })
 
 
 
-export class SellerProfileComponent {
+export class SellerProfileComponent implements OnInit{
   title = 'untitled';
   profileForm = new FormGroup({
     name: new FormControl(''),
@@ -38,7 +38,7 @@ export class SellerProfileComponent {
     ruc: new FormControl(''),
     phone: new FormControl(''),
     description: new FormControl(''),
-    user: new FormControl('')
+    userId: new FormControl('')
   });
 
   profileImage!: string;
@@ -56,12 +56,13 @@ export class SellerProfileComponent {
         ruc: profile.ruc,
         phone: profile.phone,
         description: profile.description,
-        user: profile.user
+        userId: profile.user
       });
       this.profileImage = profile.profileImage; // Asegúrate de que 'profileImage' es la propiedad correcta para la imagen de perfil
     });
+  }
 
   guardar() {
-    console.log('Perfil guardado: ', this.user);
+    console.log('Perfil guardado: ');
   }
 }

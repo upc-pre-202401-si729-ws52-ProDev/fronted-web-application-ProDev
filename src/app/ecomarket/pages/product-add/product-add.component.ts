@@ -32,24 +32,26 @@ export class ProductAddComponent implements OnInit {
   constructor(private profileApiService: ProfileApiService, private formBuilder: FormBuilder, private router: Router, private authService: AuthserviceService) {
   }
 
+
   ngOnInit() {
     this.productForm = this.formBuilder.group({
       name: [''],
-      stock: [''],
+      quantity: [''],
       price: [''],
       type: [''],
-      expirationDate: [''],
+      defect: [''],
       urlImage: [''],
       description: [''],
-      user: ['']
+      userId: ['']
     });
     const currentUser = this.authService.getCurrentUser();
-    this.productForm.patchValue({user: currentUser});
+    this.productForm.patchValue({userId: currentUser});
   }
 
   onSubmit() {
 
     if (this.productForm.valid) {
+      console.log(this.productForm.value);
       this.profileApiService.addProduct(this.productForm.value).subscribe(
         response => {
           console.log('Product added successfully', response);

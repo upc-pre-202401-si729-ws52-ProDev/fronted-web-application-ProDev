@@ -18,7 +18,7 @@ import { AsyncPipe } from "@angular/common";
   styleUrls: ['./profile-customer.component.css']
 })
 export class ProfileCustomerComponent implements OnInit {
-  profileData$: Observable<any> = EMPTY;
+  profileData: Profile | null = null;
 
   constructor(private customerApiService: CustomerApiService, private route: ActivatedRoute,
               private router: Router) { }
@@ -26,19 +26,20 @@ export class ProfileCustomerComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.profileData$ = this.customerApiService.getUserById(id).pipe(
+      this.customerApiService.getUserById(id).pipe(
         switchMap(userData => this.customerApiService.getCustomer(userData.customerId)),
         map(customerArray => customerArray[0]) // Accedemos al primer objeto del array
-      );
+      ).subscribe(data => {
+        this.profileData = data;
+        console.log(data);
+      });
     }
-
-    console.log(this.profileData$);
   }
 
   navigateToEditProfileUser() {
-    this.profileData$.subscribe((profileData: any) => {
-      this.router.navigate(['profile/edit-user-profile', profileData.id]);
-    });
+    if (this.profileData) {
+      this.router.navigate(['profile/edit-user-profile', this.profileData.id]);
+    }
   }
 }
 
