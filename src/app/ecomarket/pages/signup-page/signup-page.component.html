@@ -1,4 +1,3 @@
-
 <body>
 <div class="register-container">
   <h2>Registrarse</h2>
@@ -19,10 +18,18 @@
       <label for="name">type</label>
       <mat-form-field class="selection-container">
         <mat-select [(value)]="selected">
-          <mat-option value="option1">company</mat-option>
-          <mat-option value="option2">customer</mat-option>
+          <mat-option value="Company">Company</mat-option>
+          <mat-option value="Customer">Customer</mat-option>
         </mat-select>
       </mat-form-field>
+    </div>
+    <div class="form-group" *ngIf="selected === 'Company'">
+      <label for="ruc">RUC</label>
+      <input type="text" id="ruc" name="ruc" [(ngModel)]="ruc" required>
+    </div>
+    <div class="form-group" *ngIf="selected === 'Company'">
+      <label for="aboutDescription">About Description</label>
+      <input type="text" id="aboutDescription" name="aboutDescription" [(ngModel)]="aboutDescription" required>
     </div>
     <button type="submit" [disabled]="!registerForm.form.valid">Sign Up</button>
   </form>
@@ -31,4 +38,3 @@
   <img src='../../../../assets/register-2.jpg' alt="">
 </div>
 </body>
-

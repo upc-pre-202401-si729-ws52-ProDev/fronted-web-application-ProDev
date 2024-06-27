@@ -5,11 +5,8 @@
     <div>
       <mat-card class="example-card">
         <mat-card-header>
-          <div mat-card-avatar><img [src]="profileData?.img" alt="Image of profile" ></div>
-          <mat-card-title>{{ profileData?.user }}</mat-card-title>
-          <mat-card-subtitle>Customer Profile</mat-card-subtitle>
+          <mat-card-title>{{ (profileData$ | async)?.name }}</mat-card-title>          <mat-card-subtitle>Customer Profile</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image [src]="profileData?.img" alt="Here should be your image :D">
       </mat-card>
       <div class="container">
         <h2>Phone</h2>
@@ -20,7 +17,6 @@
       <div class="container">
         <h2>Email</h2>
         <mat-card class="info">
-          <mat-card-content>{{ profileData?.email }}</mat-card-content>
         </mat-card>
       </div>
 

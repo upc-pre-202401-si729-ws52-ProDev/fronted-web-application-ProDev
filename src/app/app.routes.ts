@@ -45,7 +45,7 @@ export const routes: Routes = [
   },
 
   {
-    path: 'profile-customer',
+    path: 'profile-customer/:id',
     component: ProfileCustomerComponent
   },
 
@@ -54,7 +54,7 @@ export const routes: Routes = [
     component: EditProfileComponent
   },
   {
-    path: 'profile/edit-user-profile',
+    path: 'profile/edit-user-profile/:id',
     component: EditProfileUserComponent
   },
   {

@@ -6,7 +6,6 @@ import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
 import {ToolbarContentComponent} from "../../../../public/components/toolbar-content/toolbar-content.component";
 import {ProfileApiService} from "../../../services/profile-services/profile-api.service";
-import {Profile} from "../../../models/profile/profile";
 import {RouterLink} from "@angular/router";
 
 @Component({

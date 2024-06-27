@@ -61,7 +61,7 @@ ngOnInit() {
           if (userData.roles.includes('ROLE_COMPANY')) {
             this.router.navigate(['/seller-profile']);
           } else if (userData.roles.includes('ROLE_CUSTOMER')) {
-            this.router.navigate(['/profile-customer']);
+            this.router.navigate(['/profile-customer',data.id]);
           }
         });
       } else {
