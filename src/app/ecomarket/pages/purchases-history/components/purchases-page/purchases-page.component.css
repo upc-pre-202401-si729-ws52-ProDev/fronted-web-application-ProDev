@@ -1,0 +1,84 @@
+.purchase-history-page-container{
+  display: flex;
+  flex-direction: row; /* Por defecto, los elementos se apilan horizontalmente */
+  background-color: #F8BD00 !important;
+  padding: 20px;
+  height: calc(100vh - 40px);
+  box-sizing: border-box;
+}
+
+.purchase-history-container {
+  flex: 1;
+  margin-right: 20px;
+  padding: 20px;
+  background-color: #cdc8c8; /* Fondo claro para la lista, modifícalo según tus preferencias */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra suave para el contenedor */
+}
+
+.purchase-history-container {
+  flex: 1;
+  margin-right: 20px;
+  padding: 20px;
+  background-color: #cdc8c8;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 600px) {
+  .purchase-history-container {
+    margin-right: 0;
+    padding: 10px;
+  }
+}
+
+/* Media query para pantallas medianas */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .purchase-history-container {
+    margin-right: 10px;
+    padding: 15px;
+  }
+}
+
+/* Media query para pantallas grandes */
+@media (min-width: 1025px) {
+  .purchase-history-container {
+    margin-right: 20px;
+    padding: 20px;
+  }
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 600px) {
+  .purchase-history-page-container {
+    flex-direction: column; /* En pantallas pequeñas, los elementos se apilan verticalmente */
+  }
+}
+
+.purchase-history-container .mat-card {
+  /* Estilos por defecto para las tarjetas */
+}
+
+.purchase-history-container .mat-card-content {
+  /* Estilos por defecto para el contenido de las tarjetas */
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 600px) {
+  .purchase-history-container .mat-card-content {
+    font-size: 12px; /* Reduce el tamaño de la fuente para pantallas pequeñas */
+  }
+}
+
+/* Media query para pantallas medianas */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .purchase-history-container .mat-card-content {
+    font-size: 16px; /* Aumenta el tamaño de la fuente para pantallas medianas */
+  }
+}
+
+/* Media query para pantallas grandes */
+@media (min-width: 1025px) {
+  .purchase-history-container .mat-card-content {
+    font-size: 20px; /* Aumenta aún más el tamaño de la fuente para pantallas grandes */
+  }
+}

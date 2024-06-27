@@ -15,6 +15,7 @@ import {SellerProfileComponent} from "./ecomarket/components/seller-profile/sell
 import {ProductListCustomersComponent} from "./ecomarket/pages/product-list-customers/product-list-customers.component";
 import {ShoppingCartPageComponent} from "./ecomarket/pages/shopping-cart-page/shopping-cart-page.component";
 import {CheckoutPageComponent} from "./ecomarket/pages/checkout-page/checkout-page.component";
+import {PurchasesPageComponent} from "./ecomarket/pages/purchases-history/components/purchases-page/purchases-page.component";
 import {ReviewListComponent} from "./ecomarket/pages/review-list/review-list.component";
 import {ProductAddComponent} from "./ecomarket/pages/product-add/product-add.component";
 
@@ -75,7 +76,7 @@ export const routes: Routes = [
     component: SellerProfileComponent
   },
   {
-    path:'product-list-customers/:id',
+    path:'product-list-customers',
     component: ProductListCustomersComponent
   },
  {
@@ -92,5 +93,9 @@ export const routes: Routes = [
   {
     path: 'checkout/:cartId',
     component: CheckoutPageComponent
+  },
+  {
+    path: 'user/purchases/history',
+    component: PurchasesPageComponent
   }
 ];
