@@ -1,3 +1,11 @@
+h1 {
+  align-self: center;
+  margin-top: 40px;
+  text-align: center;
+  font-family: 'Titan One', cursive;
+}
+
+
 .donation-form-card{
   background-color:transparent;
 }
@@ -14,6 +22,11 @@ button {
 
   /* Aumenta el margen para separar más los campos entre sí */
   margin: 10px 0;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Media query para pantallas pequeñas */
