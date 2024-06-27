@@ -21,15 +21,24 @@ export class ShoppingCartPageComponent implements OnInit{
 
   cartItems: any[] = [];
   total = 0;
+  cartId:any = 1; //TODO: Traer el id del carrito del usuario logueado
 
   constructor(private cartService: CartService,
               private router: Router) {
   }
 
   ngOnInit(): void {
-    this.cartItems = this.cartService.getCartItems();
-    console.log('Items en el carrito:', this.cartItems);
-    this.calculateTotal();
+    this.cartService.getCartItems(this.cartId).subscribe((data: any) => {
+      this.cartItems = data.map((item: any) => {
+        return {
+          id: item.id,
+          product: item.product,
+          quantity: item.quantity
+        }
+      });
+      console.log('Items en el carrito:', this.cartItems);
+      this.calculateTotal();
+    });
   }
 
   calculateTotal() {
@@ -38,13 +47,15 @@ export class ShoppingCartPageComponent implements OnInit{
 
   checkout() {
     //TODO: Hacer llamado al backend para realizar la compra
-    console.log('Compra realizada');
-    this.router.navigate(['checkout']);
+    console.log('Llevando a checkout');
+    this.router.navigate(['checkout', this.cartId]);
   }
 
   removeFromCart(item: any) {
-    this.cartService.removeItemFromCart(item);
-    this.calculateTotal();
+    this.cartService.removeItemFromCart(this.cartId, item.id).subscribe(() => {
+      this.cartItems = this.cartItems.filter(i => i.id !== item.id);
+      this.calculateTotal();
+    });
   }
 }
 

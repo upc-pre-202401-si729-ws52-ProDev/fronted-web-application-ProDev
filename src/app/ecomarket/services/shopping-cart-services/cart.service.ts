@@ -1,32 +1,38 @@
 import { Injectable } from '@angular/core';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {environment} from "../../../../environments/environment.prod";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  private cartItems: any[] = [];
 
-  constructor() {
-    const storedCartItems = localStorage.getItem('cartItems');
-    if (storedCartItems) {
-      this.cartItems = JSON.parse(storedCartItems);
-    }
+  baseUrl = environment.serverBasePath;
+
+  constructor(private http: HttpClient) {}
+
+  createCart(customerId: any):Observable<any> {
+    return this.http.post(this.baseUrl + 'shopping-cart/create', { customerId: customerId });
   }
 
-  addToCart(product: any, quantity: number) {
-    this.cartItems.push({product, quantity});
-    localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
+  clearCart(cartId: any) {
+    return this.http.delete(this.baseUrl + 'shopping-cart/' + cartId + '/clear');
   }
 
-  getCartItems() {
-    return this.cartItems;
+  getCartItems(cartId: any) {
+    return this.http.get(this.baseUrl + 'shopping-cart/' + cartId);
   }
 
-  removeItemFromCart(item: any) {
-    const index = this.cartItems.indexOf(item);
-    if (index > -1) {
-      this.cartItems.splice(index, 1);
-      localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
-    }
+  addToCart(product: any, quantity: number, shoppingCartId: number) {
+    return this.http.post(this.baseUrl + 'shopping-cart/' + shoppingCartId , {
+      quantity: quantity,
+      productId: product.id,
+      shoppingCartId: shoppingCartId
+    });
+  }
+
+  removeItemFromCart(cartId: number, itemId: number) {
+    return this.http.delete(this.baseUrl + 'shopping-cart/' + cartId + '/cart-item/' + itemId);
   }
 }

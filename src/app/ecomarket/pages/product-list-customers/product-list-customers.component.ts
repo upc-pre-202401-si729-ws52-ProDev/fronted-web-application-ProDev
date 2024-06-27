@@ -20,12 +20,23 @@ import {RouterLink} from "@angular/router";
   templateUrl: 'product-list-customers.component.html',
   styleUrl: 'product-list-customers.component.css'
 })
+
+
 export class ProductListCustomersComponent implements OnInit {
   rows: any[] = [];
   filteredRows: any[] = [];
   searchControl = new FormControl();
   quantity: number = 0;
   productsAtCart: any[] = [];
+  mockUser = {
+    id: '1',
+    name: 'Test User'
+  };
+  private cartId: any;
+
+
+
+
 
   constructor(private productsApiService: ProductsApiService
   ,private router: Router,
@@ -57,16 +68,30 @@ export class ProductListCustomersComponent implements OnInit {
     // por ejemplo, podrías guardar los productos en un arreglo
     // y luego mostrarlos en un componente de carrito
 
-    this.cartService.addToCart(product, quantity);
+    this.cartService.addToCart(product, quantity, 1).subscribe((data: any) => {
+      console.log('Producto añadido al carrito:', data);
+      this.productsAtCart.push(data);
+    } , error => {
+      console.log('Error añadiendo al carrito:', error);
+    } );
     //Limpiando la variable quantity
     this.quantity = 0;
 
   }
 
-
-
   viewReviews(product: any) {
     this.router.navigate(['/review-list']);
   }
+
+  goToShoppingCart() {
+    this.cartService.createCart(this.mockUser.id).subscribe((response: CartResponse) => {
+      this.cartId = response.cartId;
+      // Navega al carrito de compras
+      this.router.navigate(['/shopping-cart']);
+    });
+  }
 }
 
+interface CartResponse{
+  cartId: any;
+}
