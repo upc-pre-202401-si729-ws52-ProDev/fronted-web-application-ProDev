@@ -85,7 +85,7 @@ export const routes: Routes = [
     component: ShoppingCartPageComponent
   },
   {
-    path: 'checkout',
+    path: 'checkout/:cartId',
     component: CheckoutPageComponent
   }
 ];

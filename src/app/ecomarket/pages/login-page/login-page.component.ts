@@ -22,7 +22,8 @@ export class LoginPageComponent implements OnInit{
 
   // @ts-ignore
   rememberMe: false;
-  constructor(private router: Router, private http: HttpClient) {
+  constructor(private router: Router, private http: HttpClient,
+              private loginService: LoginService) {
   }
 
 ngOnInit() {
@@ -48,23 +49,29 @@ ngOnInit() {
   }
 
   login() {
-    this.http.get('https://my-json-server.typicode.com/upc-pre-202401-si729-ws52-ProDev/eco-market-api/users').subscribe((data: any) => {
-      console.log(data);
-      const currentUser = data.find((user: any) => user.user === this.user && user.password === this.password);
-      if (currentUser) {
-        if (currentUser.type === 'customer') {
-          this.router.navigate(['/profile-customer']);
-        } else {
-          this.router.navigate(['/seller-profile']);
-        }
+    this.loginService.signIn(this.user, this.password).subscribe((data: any) => {
+      if (data) {
+        // Guarda el token en el almacenamiento local
+        localStorage.setItem('authToken', data.token);
+        console.log(data);
+
+        // Obtiene el rol del usuario
+        this.loginService.getUserRole(data.id).subscribe((userData: any) => {
+          // Navega a la página de perfil correspondiente
+          if (userData.roles.includes('ROLE_COMPANY')) {
+            this.router.navigate(['/seller-profile']);
+          } else if (userData.roles.includes('ROLE_CUSTOMER')) {
+            this.router.navigate(['/profile-customer']);
+          }
+        });
       } else {
         alert('Correo electrónico o contraseña incorrectos o no registrados');
       }
     });
-      if (this.rememberMe) {
-        localStorage.setItem('username', this.user);
-        localStorage.setItem('password', this.password);
-      }
 
+    if (this.rememberMe) {
+      localStorage.setItem('username', this.user);
+      localStorage.setItem('password', this.password);
+    }
   }
 }
