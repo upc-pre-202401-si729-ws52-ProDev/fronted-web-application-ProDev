@@ -1,0 +1,21 @@
+<div class="purchases-container">
+  <h1>Your purchases:</h1>
+  <div *ngFor="let purchase of purchases">
+    <mat-card class ="purchase-card" aria-label="Card of a purchase" role = "contentinfo">
+      <mat-card-header>
+        <mat-card-title style="text-align: center;">{{purchase.product.name}}</mat-card-title>
+      </mat-card-header>
+        <div style="margin-left:10rem">
+          <mat-card-content>
+            <span>Data: </span>
+            <br>
+            <br>
+            <p>Amount: {{purchase.product.totalAmount}}</p>
+            <p>Date: {{purchase.product.date}}</p>
+            <p>Payment Method: {{purchase.product.paymentMeth}}</p>
+            <p>Price: {{purchase.product.price}}</p>
+          </mat-card-content>
+        </div>
+    </mat-card>
+  </div>
+</div>

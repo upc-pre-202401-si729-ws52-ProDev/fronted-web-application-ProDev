@@ -1,0 +1,30 @@
+.purchase-card {
+  margin-bottom: 0.5rem;
+  max-width: 95%;
+  background-color: var(--blue-palid);
+  font-family: var(--titan-one), cursive;
+}
+
+.purchase-container {
+  height: 80vh;
+  overflow-y: auto;
+  font-family: var(--titan-one), cursive;
+}
+
+.mat-card-content {
+  /* Estilos por defecto para el contenido de las tarjetas */
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 600px) {
+  .mat-card-content {
+    font-size: 12px; /* Reduce el tamaño de la fuente para pantallas pequeñas */
+  }
+}
+
+/* Media query para pantallas medianas */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .mat-card-content {
+    font-size: 16px; /* Aumenta el tamaño de la fuente para pantallas medianas */
+  }
+}

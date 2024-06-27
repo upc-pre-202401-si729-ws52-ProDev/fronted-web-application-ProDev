@@ -19,9 +19,14 @@ const firebaseConfig = {
 
 };
 
+// @ts-ignore
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideAnimationsAsync(),provideHttpClient(),provideClientHydration(),importProvidersFrom([
-    provideFirebaseApp(() => initializeApp(firebaseConfig)),
-    provideAuth(()=> getAuth()),
-  ]),]
+  providers: [provideRouter(routes),
+    provideAnimationsAsync(),
+    provideHttpClient(),
+    provideClientHydration(),
+    importProvidersFrom(),
+    { provide: provideFirebaseApp, useFactory: () => initializeApp(firebaseConfig) },
+    { provide: provideAuth, useFactory: () => getAuth() }
+  ]
 };

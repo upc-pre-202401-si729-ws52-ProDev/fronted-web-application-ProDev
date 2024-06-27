@@ -15,6 +15,7 @@ import {SellerProfileComponent} from "./ecomarket/components/seller-profile/sell
 import {ProductListCustomersComponent} from "./ecomarket/pages/product-list-customers/product-list-customers.component";
 import {ShoppingCartPageComponent} from "./ecomarket/pages/shopping-cart-page/shopping-cart-page.component";
 import {CheckoutPageComponent} from "./ecomarket/pages/checkout-page/checkout-page.component";
+import {PurchasesPageComponent} from "./ecomarket/pages/purchases-history/components/purchases-page/purchases-page.component";
 
 export const routes: Routes = [
   {
@@ -83,5 +84,9 @@ export const routes: Routes = [
   {
     path: 'checkout',
     component: CheckoutPageComponent
+  },
+  {
+    path: 'user/purchases/history',
+    component: PurchasesPageComponent
   }
 ];
