@@ -1,0 +1,39 @@
+<h1>Add a new product </h1>
+<mat-card>
+  <mat-card-header>
+    <mat-card-subtitle>Enter product details: </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-label>Name:</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Stock:</mat-label>
+        <input matInput formControlName="stock">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Price:</mat-label>
+        <input matInput formControlName="price">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Type:</mat-label>
+        <input matInput formControlName="type">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Expiration Date:</mat-label>
+        <input matInput formControlName="expirationDate">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Description:</mat-label>
+        <input matInput formControlName="description">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Image URL:</mat-label>
+        <input matInput formControlName="urlImage">
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" >Add Product</button>
+    </form>
+  </mat-card-content>
+</mat-card>
