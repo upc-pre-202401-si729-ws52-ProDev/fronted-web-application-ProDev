@@ -18,6 +18,7 @@ import { HttpClient } from "@angular/common/http";
 export class LoginPageComponent implements OnInit{
   user: string = '';
   password: string = '';
+  companyId: string = '';
   loginForm: FormGroup = new FormGroup({});
 
   // @ts-ignore

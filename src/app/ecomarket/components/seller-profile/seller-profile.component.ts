@@ -35,7 +35,7 @@ export class SellerProfileComponent implements OnInit{
   profileForm = new FormGroup({
     name: new FormControl(''),
     ruc: new FormControl(''),
-    aboutdescription: new FormControl(''),
+    description: new FormControl(''),
     user: new FormControl('')
   });
 
@@ -50,7 +50,7 @@ export class SellerProfileComponent implements OnInit{
       this.profileForm.setValue({
         name: profile.name,
         ruc: profile.ruc,
-        aboutdescription: profile.description,
+        description: profile.description,
         user: profile.user
       });
     });
