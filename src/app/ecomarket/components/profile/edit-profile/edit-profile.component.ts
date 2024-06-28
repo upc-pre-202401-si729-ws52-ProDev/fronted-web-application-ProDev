@@ -54,16 +54,25 @@ export class EditProfileComponent implements OnInit {
 
   onSubmit() {
     const companyId = this.authService.getCurrentCompanyId();
-    this.profileApiService.updateCompanyProfile(companyId, this.profileForm.value).subscribe({
+    if (companyId === null) {
+      console.error('No se pudo obtener el companyId');
+      return;
+    }
+
+    // Ensure values are not null or undefined before calling updateProfileCompany
+    const updatedData = {
+      name: this.profileForm.value.name!,
+      ruc: this.profileForm.value.ruc!,
+      description: this.profileForm.value.description!
+    };
+
+    this.profileApiService.updateProfileCompany(companyId, updatedData).subscribe({
       next: (response) => {
         console.log('Datos actualizados con éxito', response);
-        // Aquí puedes redirigir al usuario o mostrar un mensaje de éxito
       },
       error: (error) => {
         console.error('Error al actualizar los datos', error);
-        // Manejar el error, por ejemplo, mostrando un mensaje al usuario
       }
     });
   }
-
 }

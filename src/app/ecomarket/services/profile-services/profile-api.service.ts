@@ -32,16 +32,8 @@ export class ProfileApiService {
     return this.http.post<Product>(this.baseUrl + 'products', product);
   }
 
-  updateCompanyProfile(Profile: string | null, updatedData: ɵTypedOrUntyped<{
-    ruc: FormControl<string | null>;
-    name: FormControl<string | null>;
-    description: FormControl<string | null>
-  }, ɵFormGroupValue<{
-    ruc: FormControl<string | null>;
-    name: FormControl<string | null>;
-    description: FormControl<string | null>
-  }>, any>) {
-    return this.http.put(`${this.baseUrl}/companies/${Profile}`, updatedData);
+  updateProfileCompany(companyId: string | null, updatedData: { name: string; ruc: string; description: string }): Observable<any> {
+    return this.http.put(`${this.baseUrl + 'companies'}?id=${companyId}`, updatedData);
   }
 
 }

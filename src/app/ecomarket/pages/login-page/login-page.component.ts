@@ -18,6 +18,7 @@ import { HttpClient } from "@angular/common/http";
 export class LoginPageComponent implements OnInit{
   user: string = '';
   password: string = '';
+  companyId: string = '';
   loginForm: FormGroup = new FormGroup({});
 
   // @ts-ignore
@@ -48,16 +49,21 @@ ngOnInit() {
   }
 
   login() {
-    this.http.get('https://my-json-server.typicode.com/upc-pre-202401-si729-ws52-ProDev/eco-market-api/users').subscribe((data: any) => {
+    this.http.get('http://localhost:3000/users').subscribe((data: any) => {
       console.log(data);
       const currentUser = data.find((user: any) => user.user === this.user && user.password === this.password);
+      const companyId = data.find((user: any) => user.companyId === this.companyId);
+
       if (currentUser) {
         localStorage.setItem('user', currentUser.user);
-        localStorage.setItem('companyid', currentUser.companyid);
+        localStorage.setItem('companyId', companyId.companyId);
+
         if (currentUser.type === 'customer') {
           this.router.navigate(['/profile-customer']);
         } else {
           this.router.navigate(['/seller-profile']);
+          console.log(companyId);
+
         }
       } else {
         alert('Correo electrónico o contraseña incorrectos o no registrados');
