@@ -51,22 +51,26 @@ export class DonationFormComponent implements OnInit{
       const formData = this.donationForm.value;
       const product = this.products.find(product => product.name === formData.product);
       if (product) {
-        product.quantity = formData.quantity;
+        const donation = {
+          "ong": formData.ong,
+          "productId": product.id,
+          "companyId": 1, // Reemplaza esto con el valor real
+          "quantity": formData.quantity,
+          "description": "string" // Reemplaza esto con el valor real
+        };
+
+        this.donationApiService.createDonation(donation)
+          .subscribe({
+            next: (response: any) => {
+              console.log('Response from server:', response);
+            },
+            error: (error: any) => {
+              console.log('Error:', error);
+            }
+          });
+      } else {
+        console.log('Product not found');
       }
-      const donation = {
-        id: this.generateId(),
-        ong: formData.ong,
-        product: product
-      };
-      this.donationApiService.createDonation(donation)
-        .subscribe({
-          next: (response: any) => {
-            console.log('Response from server:', response);
-          },
-          error: (error: any) => {
-            console.log('Error:', error);
-          }
-        });
     } else {
       console.log('Form is not valid');
     }

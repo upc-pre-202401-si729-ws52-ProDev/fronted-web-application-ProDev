@@ -1,36 +1,31 @@
 <app-toolbar-content></app-toolbar-content>
 <div class="content">
-    <mat-card class="example-card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image">
-          <img mat-card-avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdBimkVDjUtiU6Q8ahHcTHpKKtOpySheppww&s" alt="Avatar">
-        </div>
-        <mat-card-title>{{ profileForm.get('name')?.value }}</mat-card-title>
-        <mat-card-subtitle>{{ profileForm.get('user')?.value }}</mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image src="https://static.vecteezy.com/system/resources/previews/015/131/910/original/flat-cartoon-style-shop-facade-front-view-modern-flat-storefront-or-supermarket-design-png.png"  alt="Photo of a Shiba Inu">
-    </mat-card>
-    <form class="container2" [formGroup]="profileForm">
-      <div class="container">
-        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="RUC"></mat-icon>
-        <mat-card class="info">
-          <mat-card-content>{{ profileForm.get('ruc')?.value }}</mat-card-content>
-        </mat-card>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image">
+        <img mat-card-avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdBimkVDjUtiU6Q8ahHcTHpKKtOpySheppww&s" alt="Avatar">
       </div>
-      <div class="container">
-        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="information"></mat-icon>
-        <mat-card class="info">
-          <mat-card-content>{{ profileForm.get('aboutdescription')?.value }}</mat-card-content>
-        </mat-card>
-      </div>
+      <mat-card-title>{{ profileForm.get('name')?.value }}</mat-card-title>
+      <mat-card-subtitle>{{ profileForm.get('id')?.value }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://static.vecteezy.com/system/resources/previews/015/131/910/original/flat-cartoon-style-shop-facade-front-view-modern-flat-storefront-or-supermarket-design-png.png"  alt="Photo of a Shiba Inu">
+  </mat-card>
+  <form class="container2" [formGroup]="profileForm">
+    <div class="container">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="RUC"></mat-icon>
+      <mat-card class="info">
+        <mat-card-content>{{ profileForm.get('ruc')?.value }}</mat-card-content>
+      </mat-card>
+    </div>
+    <div class="container">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="information"></mat-icon>
+      <mat-card class="info">
+        <mat-card-content>{{ profileForm.get('aboutDescription')?.value }}</mat-card-content>
+      </mat-card>
+    </div>
 
-      <div class="example-button-row">
-        <button mat-flat-button color="primary" routerLink="/profile/edit-profile" >Edit</button>
-      </div>
-    </form>
+    <div class="example-button-row">
+      <button mat-flat-button color="primary" routerLink="/profile/edit-profile" >Edit</button>
+    </div>
+  </form>
 </div>
-
-
-
-
-

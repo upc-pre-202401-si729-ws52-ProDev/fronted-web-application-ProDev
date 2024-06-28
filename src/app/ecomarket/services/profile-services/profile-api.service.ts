@@ -16,8 +16,8 @@ export class ProfileApiService {
 
   constructor(private http:HttpClient) { }
 
-  getProfileCompany(user: string | null): Observable<Profile> {
-    return this.http.get<any>(`${this.baseUrl + 'companies'}?user=${user}`);
+  getProfileCompany(companyId: string | null): Observable<any> {
+    return this.http.get<any>(this.baseUrl + 'companies/' + companyId);
   }
 
   getProfileCustomer(){
@@ -33,7 +33,8 @@ export class ProfileApiService {
   }
 
   updateProfileCompany(companyId: string | null, updatedData: { name: string; ruc: string; description: string }): Observable<any> {
-    return this.http.put(`${this.baseUrl + 'companies'}?id=${companyId}`, updatedData);
+    const url = this.baseUrl + 'companies/' + companyId;
+    return this.http.put(url, updatedData);
   }
 
 }

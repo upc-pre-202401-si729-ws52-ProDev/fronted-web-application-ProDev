@@ -30,11 +30,11 @@ export class EditProfileComponent implements OnInit {
   profileForm = new FormGroup({
     name: new FormControl(''),
     ruc: new FormControl(''),
-    description: new FormControl(''),
+    aboutDescription: new FormControl(''),
   });
 
   profileImage!: string;
-  constructor(private profileApiService:ProfileApiService, private authService: AuthserviceService) {
+  constructor(private profileApiService:ProfileApiService, private authService: AuthserviceService,) {
   }
 
   ngOnInit() {
@@ -44,7 +44,7 @@ export class EditProfileComponent implements OnInit {
       this.profileForm.setValue({
         name: profile.name,
         ruc: profile.ruc,
-        description: profile.description,
+        aboutDescription: profile.description,
       });
       this.profileImage = profile.profileImage; // Asegúrate de que 'profileImage' es la propiedad correcta para la imagen de perfil
     });
@@ -53,6 +53,7 @@ export class EditProfileComponent implements OnInit {
 
   onSubmit() {
     const companyId = this.authService.getCurrentCompanyId();
+    console.log(companyId);
     if (companyId === null) {
       console.error('No se pudo obtener el companyId');
       return;
@@ -62,16 +63,25 @@ export class EditProfileComponent implements OnInit {
     const updatedData = {
       name: this.profileForm.value.name!,
       ruc: this.profileForm.value.ruc!,
-      description: this.profileForm.value.description!
+      description: this.profileForm.value.aboutDescription!
     };
 
+    console.log(updatedData);
+
     this.profileApiService.updateProfileCompany(companyId, updatedData).subscribe({
-      next: (response) => {
+      next: (response: any) => {
         console.log('Datos actualizados con éxito', response);
+        this.profileForm.setValue({
+          name: response.name,
+          ruc: response.ruc,
+          aboutDescription: response.aboutDescription,
+        });
       },
       error: (error) => {
         console.error('Error al actualizar los datos', error);
       }
     });
+
+    console.log(this.profileForm.value);
   }
 }

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serverBasePath: 'http://localhost:8080/api/v1/'
+  serverBasePath: 'https://backend-restfulapi-production.up.railway.app/api/v1/'
 };

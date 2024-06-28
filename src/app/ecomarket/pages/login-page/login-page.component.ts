@@ -56,10 +56,14 @@ ngOnInit() {
         localStorage.setItem('authToken', data.token);
         localStorage.setItem('user', data.id);
 
+
+
         console.log(data);
 
         // Obtiene el rol del usuario
         this.loginService.getUserRole(data.id).subscribe((userData: any) => {
+          console.log(userData);
+          localStorage.setItem('companyId',userData.companyId);
           // Navega a la página de perfil correspondiente
           if (userData.roles.includes('ROLE_COMPANY')) {
             this.router.navigate(['/seller-profile']);

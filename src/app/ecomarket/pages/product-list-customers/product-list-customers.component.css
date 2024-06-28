@@ -2,6 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center; /* Alinea los elementos verticalmente en el centro */
+  min-height: 100vh; /* Asegura que el div tenga al menos la altura de la vista */
 }
 
 .card-row {

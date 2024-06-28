@@ -16,20 +16,18 @@ export class DonationApiService {
   constructor(private http: HttpClient) { }
 
   getDonations(){
-    return this.http.get<any>(this.baseUrl);
+    return this.http.get<any>(this.baseUrl + '/company/' + 1);
   }
 
   createDonation(donation: any): Observable<any> {
-    console.log('Simulating a post request:', donation);
 
-    // Simulamos una respuesta como si fuera exitosa
-    return of(donation).pipe(
+    return this.http.post<any>(this.baseUrl, donation).pipe(
       tap(() => {
         this.donationCreatedSource.next();
-        console.log('Simulated donation creation:', donation);
+        console.log('Donation created:', donation);
       }),
       catchError(error => {
-        console.error('Error during donation simulation:', error);
+        console.error('Error during donation creation:', error);
         return of(`Failed to create donation: ${error}`);
       })
     );

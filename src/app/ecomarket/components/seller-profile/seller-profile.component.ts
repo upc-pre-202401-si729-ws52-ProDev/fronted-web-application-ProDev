@@ -35,7 +35,7 @@ export class SellerProfileComponent implements OnInit{
   profileForm = new FormGroup({
     name: new FormControl(''),
     ruc: new FormControl(''),
-    description: new FormControl(''),
+    aboutDescription: new FormControl(''),
     user: new FormControl('')
   });
 
@@ -44,18 +44,17 @@ export class SellerProfileComponent implements OnInit{
   }
 
   ngOnInit() {
-    const user = this.authService.getCurrentUser();
+    const user = this.authService.getCurrentCompanyId();
+    console.log(user);
     this.profileApiService.getProfileCompany(user).subscribe((response: any) => {
-      const profile = response[0];
+      console.log(response);
       this.profileForm.setValue({
-        name: profile.name,
-        ruc: profile.ruc,
-        description: profile.description,
-        user: profile.user
+        name: response.name,
+        ruc: response.ruc,
+        aboutDescription: response.aboutDescription,
+        user: response.id // Aquí cambiamos 'user' por 'id' para que coincida con la respuesta del servidor
       });
     });
-
-
   }
 
 }
